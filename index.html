@@ -301,6 +301,40 @@ _create: function() {
           </section>
         </div>
 
+
+		<div class="slide">
+          <header>
+			<h1><code>_trigger("finger")</code></h1>
+          </header>
+          <section class="text muchSmallerCode">
+			<p>
+			  The <code>_trigger</code> method fires an event the plugin user can...use.
+			</p>
+			<pre class="brush: js; toolbar: false;">
+// Signature
+this._trigger( "callbackName" , [eventObject], [uiObject] )
+// Example
+this._trigger( "hover" , e /* e.type == "keyup" */ , { hovered: $(e.target)});
+// The user can subscribe using an init option
+$("#elem").filterable( { hover: function(e,ui) { } );
+// Or with traditional event binding/delegation
+$("#elem").bind( "filterablehover" , function(e,ui) { } );
+</pre>
+		  <dl>
+			<dt><code>callbackName</code></dt>
+			<dd>The name of the event you want to dispatch</dd>
+			<dt><code>eventObject</code> (Optional)</dt>
+			<dd>An (mocked) event object.  <code>_trigger</code> wraps this object and stores it in <code>event.originalEvent</code></dd>
+			<dd>The user receives an object with event.type == <code>this.widgetEventPrefix + "eventname"</code></dd>
+			<dt><code>uiObject</code> (Optional)</dt>
+			<dd>An object containing useful properties the user may need to access.</dd>
+			<dd><strong>Protip:</strong> Use a method like <code>._ui</code> to generate objects with a consistent schema.</dd>
+		  </dl>
+          </section>
+        </div>
+
+
+
 		<div class="slide">
           <header>
             <h1>Encapsulate!</h1>
