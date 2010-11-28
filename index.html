@@ -227,15 +227,12 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 			// Use the _setOption method to respond to changes to options
 			switch(key) {
 				case "length":
-					// Do something to the widget if the 'className' option changes
 					break;
 			}
-			// Call the base _setOption method
 			$.Widget.prototype._setOption.apply(this,arguments)
 		},
 		destroy: function() {
 			// Use the destroy method to reverse everything your plugin has applied
-			// After you do that, you still need to invoke the "base" destroy method
 			$.Widget.prototype.destroy.call(this);
 		}
 	});
