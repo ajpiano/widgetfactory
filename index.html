@@ -473,9 +473,65 @@ _destroy: function() {
           </section>
         </div>
 
+
 		<div class="slide">
           <header>
-            <h1>Something clever</h1>
+            <h1>State + Events = Extensibility</h1>
+          </header>
+          <section class="text muchMuchSmallerCode">
+		  <p>A good widget provides a solid base with callbacks for customisation.</p>
+		<pre class="brush: js; toolbar: false;">
+var total = $("#total"), cheeses = $("#cheeses"), register = $("#register"), price = $("&lt;span&gt;"),
+	activation = $("#activation").button({icons:{primary:"ui-icon-search"}}).toggle(function() {
+	  cheeses.filterable({
+		  className: "cheese",
+		  create: function() { register.addClass("ui-widget-header cheese").show(); },
+		  filtered: function(e, ui) {
+			  var t = 0;
+			  ui.visible.each(function() { t = t + $(this).data("price"); });
+			  total.text(t.toFixed(2));
+		  },
+		  setOption: function(e, ui) {
+			  ui.option == "className" &amp;&amp; register.toggleClass([ui.original, ui.current].join(" "));
+		  },
+		  hover: function(e, ui) {
+			  if (e.originalEvent.type == "mouseenter") {
+				  price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
+			  } else {
+				  price.detach();
+			  }
+		  }
+	  }).bind("filterabledestroy", function(e,ui) {
+		  register.removeClass("ui-widget-header "+ui.options.className).hide();
+	  }).filterable("filter");
+	  setTimeout(function() { cheeses.filterable("option", "className", "cheesePlease"); },3000);
+  },
+  function() {
+	  cheeses.filterable("destroy");
+  });
+</pre>
+          </section>
+        </div>
+
+		<div class="slide">
+          <header>
+            <h1>More Resources</h1>
+          </header>
+          <section class="text">
+			<ul>
+				<li><a href="http://docs.jquery.com/UI_Developer_Guide#The_widget_factory">Developer's Guide</a></li>
+				<li><a href="http://wiki.jqueryui.com/w/page/12137970/jQuery-UI-CSS-Framework">jQuery UI CSS Framework</a></li>
+				<li><a href="http://www.erichynds.com/jquery/tips-for-developing-jquery-ui-widgets/">Tips for Developing UI Widgets</a></li>
+				<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/coding-your-first-jquery-ui-plugin/">Coding Your First jQuery UI Plugin</a></li>
+				<li><a href="http://wiki.jqueryui.com/">jQuery UI Planning Wiki</a></li>
+				<li><a href="http://ajpiano.com/widgetfactory">A link to this very presentation</a></li>
+			</ul>
+          </section>
+        </div>
+
+		<div class="slide">
+          <header>
+            <h1>No problem, enjoy</h1>
           </header>
           <section class="text">
           <ul>
