@@ -407,6 +407,9 @@ _setOption: function(key, value) {
           </section>
         </div>
 
+		
+
+
 		<div class="slide">
           <header>
             <h1>Control-Z</h1>
@@ -423,7 +426,7 @@ _destroy: function() {
 	// Unbind any events that may still exist
 	this.filterElems.unbind(".filterable")
 	// Remove any classes, including CSS framework classes, that you applied
-	.removeClass("ui-widget-content ui-helper-hidden "+this.options.className);
+	.removeClass("ui-widget-content ui-helper-hidden ui-state-active " + this.options.className);
 	
 	this._trigger("destroy",{type:"destroy"},{options:this.options});
 
@@ -435,7 +438,7 @@ _destroy: function() {
           </section>
         </div>
 
-<div class="slide">
+		<div class="slide">
           <header>
             <h1>A Cheesy Example</h1>
           </header>
@@ -479,11 +482,9 @@ _destroy: function() {
             <li><strong>adam j. sontag</strong></li>
             <li>ajpiano at ajpiano dot com</li>
             <li><a href="http://twitter.com/ajpiano">@ajpiano</a></li>
-            <li><a href="http://ajpiano.com/">http://ajpiano.com</a></li>
-            <li><a href="http://yayquery.com/">http://yayquery.com</a></li>
             <li>I'm ajpiano on freenode IRC (#jquery) and everywhere</li>
-            <li><a href="http://fixingthesejquery.com/"><strong>Fixing These jQuery:</strong> A Guide To Debugging</a></li>
-            <li style="margin-top:1em">&lt;-- <a href="http://www.artofobama.com/2009/01/02/narwhals-for-obama/">See this bullet point bigger.</a></li>
+            <li><a href="http://ajpiano.com/">my blog</a></li>
+            <li><a href="http://yayquery.com/">yayQuery</a></li>
           </ul>
           </section>
         </div>
@@ -1025,7 +1026,7 @@ css:"keyword"}];this.forHtmlScript(m.scriptScriptTags)}typeof require!="undefine
 		destroy: function() {
 			// Use the destroy method to reverse everything your plugin has applied
 			this.filterInput.parent().remove();
-			this.filterElems.removeClass("ui-widget-content ui-helper-hidden " + this.options.className).unbind(".filterable");
+			this.filterElems.removeClass("ui-widget-content ui-helper-hidden ui-state-active " + this.options.className).unbind(".filterable");
 			this._trigger("destroy",{type:"destroy"},{options:this.options});
 			// After you do that, you still need to invoke the "base" destroy method
 			// Does nice things like unbind all namespaced events
@@ -1068,12 +1069,11 @@ $(function() {
 		}).filterable("filter");
 		setTimeout(function() {
 			cheeses.filterable("option", "className", "cheesePlease");
-		},
-		3000);
+		},3000);
 	},
 	function() {
 		cheeses.filterable("destroy");
-	})
+	});
 });
 
         },

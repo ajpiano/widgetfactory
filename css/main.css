@@ -1,7 +1,7 @@
 
       body {
         font: 24px "CartoGothicStdBook","Helvetica Neue", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-        line-height:38px;
+        line-height:34px;
         padding: 0;
         margin: 0;
         width: 100%;
@@ -198,6 +198,9 @@
       .gmap a {
         line-height: 100%;
         border-bottom: none;
+      }
+      p {
+        .5em 0;
       }
       ul {
         padding-left:0;
