@@ -208,10 +208,10 @@
       li {
         list-style: none;
         padding: 10px 0;
-        background-image:url(../images/obama_narwhal.png);
+        background-image:url(../images/jqueryui_logo_bullet.png);
         background-position:left 50%;
         background-repeat:no-repeat;
-        padding-left:40px;
+        padding-left:24px;
         line-height:24px;
       }
       ul.lots-of-bullets li {
@@ -256,8 +256,8 @@
         line-height: 68px;
         text-align: center;
         display: table-cell;
-        vertical-align: bottom;
-        height: 500px;
+        vertical-align: middle;
+        height: 700px;
         width: 900px;
       }
       /*
@@ -550,7 +550,7 @@
 	position:static;
       }
       #intro .bg{
-        background-image:url(../images/adam_baby_computer.jpg);
+        background-image:url(../images/jqueryui_logo.png);
         background-position:50% 50%;
         background-repeat:no-repeat;
       }
@@ -714,8 +714,7 @@ color:#5DB0E6 !important;
   margin:0;
 }
 #cheeses li {
-  line-height:12px;
-  padding:8px;
+  line-height:18px;
 }
 .cheese {
  font-weight:bold;
