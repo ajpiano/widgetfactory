@@ -244,6 +244,24 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 
         <div class="slide">
           <header>
+            <h1>I Can See Your Privates</h1>
+          </header>
+          <section class="text smallerCode">
+			<p>Methods prefixed with an underscore are, <em>by convention only</em>, private.</p>
+			<ul>
+			  <li>These methods cannot be accessed via a plugin's public API:</li>
+			  <li><code>$("#foo").filterable("_hover")</code> will not work</li>
+			  <li>They are, however, accessible directly from the widget instance:</li>
+			  <li><code>$("#foo").data("filterable")._hover()</code> will</li>
+			  <li>They are also accessible on the widget prototype</li>
+			  <li><code>$.ui.widget.prototype_hover = function() { /* snip */ };</code>
+			</ul>
+		  </section>
+		</div>
+
+
+		<div class="slide">
+          <header>
             <h1>Clothing Optional</h1>
           </header>
           <section class="text smallerCode">
