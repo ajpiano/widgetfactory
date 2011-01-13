@@ -72,8 +72,8 @@
       .slide .counter {
         color: #999999;
         position: absolute;
-        left: 20px;
-        bottom: 20px;
+        left: 10px;
+        bottom: 10px;
         display: block;
         font-size: 12px;
       }
@@ -714,7 +714,7 @@ color:#5DB0E6 !important;
   margin:0;
 }
 #cheeses li {
-  line-height:18px;
+  line-height:12px;
 }
 .cheese {
  font-weight:bold;

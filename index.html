@@ -254,7 +254,7 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 			  <li>They are, however, accessible directly from the widget instance:</li>
 			  <li><code>$("#foo").data("filterable")._hover()</code> will</li>
 			  <li>They are also accessible on the widget prototype</li>
-			  <li><code>$.ui.widget.prototype_hover = function() { /* snip */ };</code>
+			  <li><code>$.ui.widget.prototype.hover = function() { /* snip */ };</code>
 			</ul>
 		  </section>
 		</div>
@@ -332,7 +332,7 @@ _create: function() {
 // Signature
 this._trigger( "callbackName" , [eventObject], [uiObject] )
 // Example
-this._trigger( "hover" , e /* e.type == "keyup" */ , { hovered: $(e.target)});
+this._trigger( "hover", e /* e.type == "mouseenter" */, { hovered: $(e.target)});
 // The user can subscribe using an init option
 $("#elem").filterable( { hover: function(e,ui) { } );
 // Or with traditional event binding/delegation
