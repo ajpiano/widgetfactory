@@ -253,8 +253,8 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 			  <li><code>$("#foo").filterable("_hover")</code> will not work</li>
 			  <li>They are, however, accessible directly from the widget instance:</li>
 			  <li><code>$("#foo").data("filterable")._hover()</code> will</li>
-			  <li>They are also accessible on the widget prototype</li>
-			  <li><code>$.ui.widget.prototype._hover = function() { /* snip */ };</code>
+			  <li>They are also accessible on the widget's prototype</li>
+			  <li><code>$.aj.filterable.prototype._hover = function() { /* snip */ };</code>
 			</ul>
 		  </section>
 		</div>
