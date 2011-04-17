@@ -68,6 +68,13 @@
         </div>
 	
         <div class="slide">
+		  <header class="moreLegit">
+			<h1 class="middleGuy">ajpiano.com/widgetfactory</h1>
+		  </header>
+        </div>
+
+
+        <div class="slide">
           <header>
             <h1>Easy Plugins Are Easy</h1>
           </header>
@@ -531,7 +538,86 @@ var total = $("#total"), cheeses = $("#cheeses"), register = $("#register"), pri
           </section>
         </div>
 
-		<div class="slide">
+
+        <div class="slide">
+          <header>
+            <h1>1.9 is gonna be <code>.super()</code></h1>
+            </header>
+            <section class="text smallerCode">
+              <h2>1.7/1.8</h2>
+              <pre class="brush: js; toolbar: false;">
+// Inheritance works, but you have to type a lot
+// and access methods publicly
+_setOption: function(key, value) {
+  // Handle the option change and then
+  $.Widget.prototype._setOption.call(this, key, value);
+}
+</pre>
+              <h2>1.9+</h2>
+              <pre class="brush: js; toolbar: false;">
+_setOption: function(key, value) {
+  // Handle the option change and then
+  this._super("_setOption", key value);
+}
+</pre>
+            </section>
+        </div>
+
+        <div class="slide">
+          <header>
+            <h1>It's <code>.widget()</code> all the way down</h1>
+            </header>
+            <section class="text smallerCode">
+            <ul>
+              <li>In 1.9, a widget can "inherit" from itself</li>
+              <li>This is the ideal way to extend widgets</li>
+            </ul>
+            <pre class="brush: js; toolbar: false;">
+// An incredibly contrived example
+$.widget("ui.dialog", $.ui.mouse, {
+  close: function() {
+    if (confirm( "Is it closing time?" )) {
+      this._super("close");
+    }
+  }
+});</pre>
+            </section>
+        </div>
+        
+        <div class="slide">
+          <header>
+            <h1>I've got a <code>bridge</code> to sell you</h1>
+            </header>
+            <section class="text smallerCode">
+            <ul>
+              <li><a href="https://github.com/jquery/jquery-ui/blob/master/ui/jquery.ui.widget.js#L96"><code>$.widget.bridge</code></a> is the mechanism that actually creates the plugin</li>
+              <li>Set/change which widget prototype exists on <code>jQuery.fn</code></li>
+            </ul>
+            <pre class="brush: js; toolbar: false;">
+// Create a brand new dialog widget from scratch
+$.widget("my.awesomeDialog", {/* snip */});
+
+// Use the bridge to assign it to jQuery.fn.dialog
+$.widget.bridge("dialog", $.my.awesomeDialog);
+</pre>
+            </section>
+        </div>
+        
+        <div class="slide">
+          <header>
+            <h1>U and I can be friends</h1>
+          </header>
+            <section class="text smallerCode">
+            <h2>But not roommates</h2>
+            <ul>
+              <li>The <code>ui</code> namespace is reserved for official jQuery UI plugins</li>
+              <li>Just because you're using the widget factory doesn't mean you have to use <code>ui</code></li>
+              <li>We'd kinda prefer if you didn't :)</li>
+            </ul>
+            </section>
+        </div>
+
+        <div class="slide">
           <header>
             <h1>More Resources</h1>
           </header>

@@ -165,7 +165,6 @@
       }
             
       h2:first-child {
-        margin-top: 0;
       }
       section, footer {
         color: #0d0902;
@@ -544,6 +543,7 @@
       }
       h1.middleGuy {
 	text-align:center;
+        font-size:120%;
 	margin:290px auto;
       }
       header.moreLegit {
