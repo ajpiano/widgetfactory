@@ -557,7 +557,7 @@ _setOption: function(key, value) {
               <pre class="brush: js; toolbar: false;">
 _setOption: function(key, value) {
   // Handle the option change and then
-  this._super("_setOption", key value);
+  this._super("_setOption", key, value);
 }
 </pre>
             </section>
@@ -574,7 +574,7 @@ _setOption: function(key, value) {
             </ul>
             <pre class="brush: js; toolbar: false;">
 // An incredibly contrived example
-$.widget("ui.dialog", $.ui.mouse, {
+$.widget("ui.dialog", $.ui.dialog, {
   close: function() {
     if (confirm( "Is it closing time?" )) {
       this._super("close");
