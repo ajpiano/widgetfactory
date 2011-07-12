@@ -341,7 +341,7 @@ this._trigger( "callbackName" , [eventObject], [uiObject] )
 // Example
 this._trigger( "hover", e /* e.type == "mouseenter" */, { hovered: $(e.target)});
 // The user can subscribe using an init option
-$("#elem").filterable( { hover: function(e,ui) { } );
+$("#elem").filterable( { hover: function(e,ui) { } } );
 // Or with traditional event binding/delegation
 $("#elem").bind( "filterablehover" , function(e,ui) { } );
 </pre>
