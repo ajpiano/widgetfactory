@@ -228,22 +228,22 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 		},
 		_hover: function() {
 			// Methods with an underscore are "private"
-		}
+		},
 		_setOption: function(key, value) {
 			// Use the _setOption method to respond to changes to options
 			switch(key) {
 				case "length":
 					break;
 			}
-			$.Widget.prototype._setOption.apply(this,arguments)
-		},
-		destroy: function() {
-			// Use the destroy method to reverse everything your plugin has applied
-			$.Widget.prototype.destroy.call(this);
+			// and call the parent function too!
+			return this._superApply(arguments);
 		}
+		_destroy: function() {
+			// Use the destroy method to reverse everything your plugin has applied
+			return this._super();
+		},
 	});
 })(jQuery);
-
 </pre>
 					</section>
 				</div>
