@@ -407,8 +407,10 @@
 	line-height:24px;
 }
 .muchSmallerCode .gutter .line {
-	font-size:14px;
-	line-height:21px;
+  font-size: 18px;
+  line-height:24px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .muchMuchSmallerCode .html ,
@@ -417,8 +419,10 @@
 	line-height:18px;
 }
 .muchMuchSmallerCode .gutter .line {
-	font-size:12px;
-	line-height:14.5px;
+  font-size: 14px;
+  line-height:18px;
+  margin: 0px;
+  padding: 0px;
 }
 
 
