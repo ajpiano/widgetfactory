@@ -20,7 +20,7 @@
 					"mouseleave": "_hover"
 				});
 
-			this.filterInput = $("<input>", {type: "text"})
+			this.filterInput = $("<input type='text'>")
 				.insertBefore(this.element)
 				._bind("keyup", "filter")
 				.wrap("<div class='ui-widget-header " + this.options.className + "'>");
@@ -30,24 +30,23 @@
 
 		},
 		filter: function(e) {
-			// Keep various pieces of logic in separate methods
-			this.timeout && clearTimeout(this.timeout);
-			this.timeout = setTimeout($.proxy(function() {
+			// Debounce the keyup event with a timeout, using the specified delay
+			clearTimeout(this.timeout);
+			// like setTimeout, only better!
+			this.timeout = this._delay( function() {
 				var re = new RegExp(this.filterInput.val(), "ig"),
-				visible = this.filterElems.filter(function() {
-					var $t = $(this),
-					matches = re.test($t.text()),
-					method = (matches ? "remove": "add") + "Class";
-					$t[method]("ui-helper-hidden");
-					return matches;
-				});
+					visible = this.filterElems.filter(function() {
+						var $t = $(this), matches = re.test($t.text());
+						// Leverage the CSS Framework to handle visual state changes
+						$t.toggleClass("ui-helper-hidden", matches);
+						return matches;
+					});
+				// Trigger a callback so the user can respond to filtering being complete
+				// Supply  an object of useful parameters with the second argument to _trigger
 				this._trigger("filtered", e, {
 					visible: visible
 				});
-
-			},
-			this), this.options.delay);
-
+			}, this.options.delay );
 		},
 		_hover: function(e) {
 			$(e.target)[(e.type == "mouseenter" ? "add": "remove") + "Class"]("ui-state-active");

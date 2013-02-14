@@ -320,6 +320,7 @@ _create: function() {
 		._bind("keyup", "filter")
 		// Optional: Integrate with the jQuery UI CSS Framework
 		.wrap("&lt;div class='ui-widget-header "+this.options.className+"'&gt;");
+	this._focusable( this.filterInput );
 	// Initialise any other instance-wide variables
 	this.timeout = false;
 }</pre>
@@ -370,13 +371,14 @@ $("#elem").bind( "filterablehover" , function(e,ui) { } );
 			<pre class="brush: js; toolbar: false;">
 filter: function(e) {
 	// Debounce the keyup event with a timeout, using the specified delay
-	this.timeout &amp;&amp; clearTimeout(this.timeout);
-	this.timeout = setTimeout($.proxy(function() {
+	clearTimeout(this.timeout);
+	// like setTimeout, only better!
+	this.timeout = this._delay( function() {
 		var re = new RegExp(this.filterInput.val(), "ig"),
 			visible = this.filterElems.filter(function() {
-				var $t = $(this), matches = re.test($t.text()), method = (matches ? "remove": "add") + "Class";
+				var $t = $(this), matches = re.test($t.text());
 				// Leverage the CSS Framework to handle visual state changes
-				$t[method]("ui-helper-hidden");
+				$t.toggleClass("ui-helper-hidden", matches);
 				return matches;
 			});
 		// Trigger a callback so the user can respond to filtering being complete
@@ -384,11 +386,10 @@ filter: function(e) {
 		this._trigger("filtered", e, {
 			visible: visible
 		});
-	},
-	this), this.options.delay);
+	}, this.options.delay);
 },
 _hover: function(e) {
-	$(e.target)[(e.type == "mouseenter" ? "add": "remove") + "Class"]("ui-state-active");
+	$(e.target).toggleClass("ui-state-active", e.type == "mouseenter");
 	this._trigger("hover", e, {
 		hovered: $(e.target)
 	});
