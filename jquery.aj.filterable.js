@@ -14,16 +14,19 @@
 
 			// Cache references to collections the widget needs to access regularly
 			this.filterElems = this.element.children()
-				.addClass("ui-widget-content "+this.options.className)
-				._bind({
-					"mouseenter": "_hover",
-					"mouseleave": "_hover"
-				});
+				.addClass("ui-widget-content "+this.options.className);
+			this._on( this.filterElems, {
+				"mouseenter": "_hover",
+				"mouseleave": "_hover"
+			});
 
 			this.filterInput = $("<input type='text'>")
 				.insertBefore(this.element)
-				._bind("keyup", "filter")
 				.wrap("<div class='ui-widget-header " + this.options.className + "'>");
+			// bind events on elements
+			this._on( this.filterInput, {
+				"keyup": "filter"
+			});
 			this.timeout = false;
 
 			this._trigger("ready");
@@ -38,7 +41,7 @@
 					visible = this.filterElems.filter(function() {
 						var $t = $(this), matches = re.test($t.text());
 						// Leverage the CSS Framework to handle visual state changes
-						$t.toggleClass("ui-helper-hidden", matches);
+						$t.toggleClass("ui-helper-hidden", !matches);
 						return matches;
 					});
 				// Trigger a callback so the user can respond to filtering being complete
@@ -46,6 +49,7 @@
 				this._trigger("filtered", e, {
 					visible: visible
 				});
+				console.log( visible );
 			}, this.options.delay );
 		},
 		_hover: function(e) {
