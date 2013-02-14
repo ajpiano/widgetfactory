@@ -11,14 +11,19 @@
 			// Two things are already available:
 			// this.element -- a jQuery object of the element the widget was invoked on.
 			// this.options --  the merged options hash
+
+			// Cache references to collections the widget needs to access regularly
 			this.filterElems = this.element.children()
-							   .addClass("ui-widget-content " + this.options.className)
-							   .bind("mouseenter.filterable mouseleave.filterable", $.proxy(this, "_hover"));
+				.addClass("ui-widget-content "+this.options.className)
+				._bind({
+					"mouseenter": "_hover",
+					"mouseleave": "_hover"
+				});
 
 			this.filterInput = $("<input>", {type: "text"})
-							   .insertBefore(this.element)
-							   .bind("keyup.filterable", $.proxy(this, "filter"))
-							   .wrap("<div class='ui-widget-header " + this.options.className + "'>");
+				.insertBefore(this.element)
+				._bind("keyup", "filter")
+				.wrap("<div class='ui-widget-header " + this.options.className + "'>");
 			this.timeout = false;
 
 			this._trigger("ready");

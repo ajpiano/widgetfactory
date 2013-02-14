@@ -258,7 +258,7 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 				<li>These methods cannot be accessed via a plugin's public API:</li>
 				<li><code>$("#foo").filterable("_hover")</code> will not work</li>
 				<li>They are, however, accessible directly from the widget instance:</li>
-				<li><code>$("#foo").data("filterable")._hover()</code> will</li>
+				<li><code>$("#foo").data("ui-filterable")._hover()</code> will</li>
 				<li>They are also accessible on the widget's prototype</li>
 				<li><code style="font-size:90%;">$.aj.filterable.prototype._hover = function() { /* snip */ };</code>
 			</ul>
@@ -277,14 +277,15 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 			<pre class="brush: js; toolbar: false;">
 // Parameters that must be initialised,
 // but are optional for the plugin user
-options:{
+options: {
 	delay:250,
 	className:""
-} </pre>
+}
+</pre>
 			<p>This is akin to a familiar step from basic jQuery plugin authoring</p>
 			<pre class="brush: js; toolbar: false;">
 $.fn.foo = function(opts) {
-	var defaults = {bar:"baz"},
+	var defaults = { bar: "baz" },
 		options = $.extend({},defaults,opts);
 };
 </pre>
@@ -301,27 +302,27 @@ $.fn.foo = function(opts) {
 				Use the <code>_create</code> method to set up your widget. 
 				It is called the first time that the plugin is invoked on an element.
 			</p>
-			<pre class="brush: js; toolbar: false; highlight:[8,13]">
+			<pre class="brush: js; toolbar: false;">
 _create: function() {
 	// this.element -- a jQuery object of the element the widget was invoked on.
 	// this.options --  the merged options hash
 
 	// Cache references to collections the widget needs to access regularly
 	this.filterElems = this.element.children()
-						 .addClass("ui-widget-content "+this.options.className)
-						 .bind("mouseenter.filterable mouseleave.filterable",this._hover);
-
+		.addClass("ui-widget-content "+this.options.className)
+		._bind({
+			"mouseenter": "_hover",
+			"mouseleave": "_hover"
+		});
 	// Create and add any new elements that are used by the widget
 	// Bind event handlers
-	this.filterInput = $("&lt;input&gt;", { type: "text" }) .insertBefore(this.element)
-						 .bind("keyup.filterable",$.proxy(this, "filter"))
-	// Optional: Integrate with the jQuery UI CSS Framework
-						 .wrap("&lt;div class='ui-widget-header "+this.options.className+"'&gt;");
-
+	this.filterInput = $("&lt;input type=\"text\"&gt;").insertBefore(this.element)
+		._bind("keyup", "filter")
+		// Optional: Integrate with the jQuery UI CSS Framework
+		.wrap("&lt;div class='ui-widget-header "+this.options.className+"'&gt;");
 	// Initialise any other instance-wide variables
 	this.timeout = false;
 }</pre>
-			<p>Be a good citizen and <em>namespace your event handlers</em></p>
 					</section>
 				</div>
 
@@ -336,11 +337,11 @@ _create: function() {
 			</p>
 			<pre class="brush: js; toolbar: false;">
 // Signature
-this._trigger( "callbackName" , [eventObject], [uiObject] )
+this._trigger( "callbackName", [eventObject], [uiObject] )
 // Example
 this._trigger( "hover", e /* e.type == "mouseenter" */, { hovered: $(e.target)});
-// The user can subscribe using an init option
-$("#elem").filterable( { hover: function(e,ui) { } } );
+// The user can subscribe using an option during initalization
+$("#elem").filterable({ hover: function(e,ui) { } });
 // Or with traditional event binding/delegation
 $("#elem").bind( "filterablehover" , function(e,ui) { } );
 </pre>
