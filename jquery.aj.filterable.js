@@ -15,6 +15,7 @@
 			// Cache references to collections the widget needs to access regularly
 			this.filterElems = this.element.children()
 				.addClass("ui-widget-content "+this.options.className);
+
 			this._on( this.filterElems, {
 				"mouseenter": "_hover",
 				"mouseleave": "_hover"
@@ -37,7 +38,7 @@
 			clearTimeout(this.timeout);
 			// like setTimeout, only better!
 			this.timeout = this._delay( function() {
-				var re = new RegExp(this.filterInput.val(), "ig"),
+				var re = new RegExp(this.filterInput.val(), "i"),
 					visible = this.filterElems.filter(function() {
 						var $t = $(this), matches = re.test($t.text());
 						// Leverage the CSS Framework to handle visual state changes
@@ -57,7 +58,6 @@
 			this._trigger("hover", e, {
 				hovered: $(e.target)
 			});
-
 		},
 		_setOption: function(key, value) {
 			var oldValue = this.options[key];
@@ -65,31 +65,30 @@
 			if (key == "className") {
 				// Gather all the elements we applied the className to
 				this.filterInput.parent().add(this.filterElems)
-				// Wwitch the new className in for the old
+				// switch the new className in for the old
 				.toggleClass(this.options.className + " " + value);
 			}
 			// Call the base _setOption method
-			$.Widget.prototype._setOption.apply(this, arguments);
+			this._superApply( arguments );
 
 			// The widget factory doesn't fire an callback for options changes by default
 			// In order to allow the user to respond, fire our own callback
 			this._trigger("setOption", {
 				type: "setOption"
-			},
-			{
+			}, {
 				option: key,
 				original: oldValue,
 				current: value
 			});
 
 		},
-		destroy: function() {
-			// Use the destroy method to reverse everything your plugin has applied
+		_destroy: function() {
+			// Use the _destroy method to reverse everything your plugin has applied
 			this.filterInput.parent().remove();
 			this.filterElems.removeClass("ui-widget-content ui-helper-hidden " + this.options.className).unbind(".filterable");
 			// After you do that, you still need to invoke the "base" destroy method
 			// Does nice things like unbind all namespaced events
-			$.Widget.prototype.destroy.call(this);
+			this._super();
 		}
 	});
 })(jQuery);
