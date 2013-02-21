@@ -16,9 +16,11 @@
 			this.filterElems = this.element.children()
 				.addClass("ui-widget-content "+this.options.className);
 
+			// toggles ui-state-hover for you, but we want to do something else...
+			// this._hoverable( this.filterElems );
 			this._on( this.filterElems, {
-				"mouseenter": "_hover",
-				"mouseleave": "_hover"
+				mouseenter: "_hover",
+				mouseleave: "_hover"
 			});
 
 			this.filterInput = $("<input type='text'>")
@@ -28,6 +30,9 @@
 			this._on( this.filterInput, {
 				"keyup": "filter"
 			});
+
+			// toggles ui-state-focus for you
+			this._focusable( this.filterInput );
 			this.timeout = false;
 
 			this._trigger("ready");
@@ -54,9 +59,9 @@
 			}, this.options.delay );
 		},
 		_hover: function(e) {
-			$(e.target)[(e.type == "mouseenter" ? "add": "remove") + "Class"]("ui-state-active");
-			this._trigger("hover", e, {
-				hovered: $(e.target)
+			$( e.target ).toggleClass( "ui-state-active", e.type === "mouseenter" );
+			this._trigger( "hover", e, {
+				hovered: $( e.target )
 			});
 		},
 		_setOption: function(key, value) {
@@ -66,16 +71,14 @@
 				// Gather all the elements we applied the className to
 				this.filterInput.parent().add(this.filterElems)
 				// switch the new className in for the old
-				.toggleClass(this.options.className + " " + value);
+				.toggleClass(oldValue + " " + value);
 			}
 			// Call the base _setOption method
 			this._superApply( arguments );
 
 			// The widget factory doesn't fire an callback for options changes by default
 			// In order to allow the user to respond, fire our own callback
-			this._trigger("setOption", {
-				type: "setOption"
-			}, {
+			this._trigger("setOption", null, {
 				option: key,
 				original: oldValue,
 				current: value

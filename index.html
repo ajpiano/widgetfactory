@@ -101,7 +101,7 @@
 						<p><a href="http://en.wikipedia.org/wiki/State_(computer_science)">Stateful</a> plugins are not as straightforward, but really useful.</p>
 						<ul>
 							<li>Reverse the plugin's effect?</li>
-							<li>Allow plugin users to react to events bound by the plugin?</li>
+							<li>Allow plugin users to react to events triggered by the plugin?</li>
 							<li>Change the plugin's effect after it has been applied?</li>
 							<li><em>Remember: only one function in the <code>$.fn</code> namespace!</em></li>
 							<li>Fine! But how can I even invoke "sub-methods?"</li>
@@ -125,7 +125,7 @@
 		this.element = $(elem).addClass("wu-tang").css("color","red");
 	};
 	Redman.prototype.destroy = function() {
-		this.element.removeClass("wu-tang").removeAttr("style");
+		this.element.removeClass("wu-tang").removeAttr("style").removeData("redman");
 	};
 
 	$.fn.redman = function() {
@@ -187,7 +187,7 @@ $(function() {
 								<li>Evented structure for handling setup, teardown, option changes</li>
 								<li>Easily expose callbacks: <code>._trigger("event")</code></li>
 								<li>Sane default scoping (What is <code>this</code>?</code>)</li>
-								<li>Free pseudoselector! <code>$(":ui-tabs")</code></li>
+								<li>Free pseudoselector! <code>$(":aj-filterable")</code></li>
 				<li>Inheritance! Widgets can extend from other widgets
 					<pre class="brush: js; toolbar: false;">
 $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
@@ -313,13 +313,19 @@ _create: function() {
 	// Cache references to collections the widget needs to access regularly
 	this.filterElems = this.element.children()
 		.addClass("ui-widget-content "+this.options.className);
-	// neat trick to setup ui-state-hover
-	this._hoverable( this.filterElems );
-
-	this.filterInput = $("<input type='text'>")
+	this.filterInput = $("&lt;input type='text'>")
 		.insertBefore(this.element)
 		.wrap("&lt;div class='ui-widget-header " + this.options.className + "'&gt;");
-	// bind events on elements
+
+	// bind events on elements: 
+	this._on( this.filterElems, {
+		mouseenter: "_hover",
+		mouseleave: "_hover"
+	});
+
+	// toggles ui-state-focus for you:
+	this._focusable( this.filterInput );
+	// _hoverable works for ui-state-hover, but we will do something slighty different in our hover
 	this._on( this.filterInput, {
 		"keyup": "filter"
 	});
@@ -351,7 +357,7 @@ $("#elem").bind( "filterablehover" , function(e,ui) { } );
 			<dt><code>callbackName</code></dt>
 			<dd>The name of the event you want to dispatch</dd>
 			<dt><code>eventObject</code> (Optional)</dt>
-			<dd>An (mocked) event object.  <code>_trigger</code> wraps this object and stores it in <code>event.originalEvent</code></dd>
+			<dd>An event object (or null).  <code>_trigger</code> wraps this object and stores it in <code>event.originalEvent</code></dd>
 			<dd>The user receives an object with event.type == <code>this.widgetEventPrefix + "eventname"</code></dd>
 			<dt><code>uiObject</code> (Optional)</dt>
 			<dd>An object containing useful properties the user may need to access.</dd>
@@ -410,21 +416,21 @@ _hover: function(e) {
 			<p>If modifiying a particular option requires an immediate state change, use the <code>_setOption</code>
 			method to listen for the change and act on it.</p>
 			<pre class="brush: js; toolbar: false; highlight:[3,4]">
-_setOption: function(key, value) {
-	var oldValue = this.options[key];
+_setOption: function( key, value ) {
+	var oldValue = this.options[ key ];
 	// Check for a particular option being set
-	if (key == "className") {
+	if ( key === "className" ) {
 		// Gather all the elements we applied the className to
-		this.filterInput.parent().add(this.filterElems)
+		this.filterInput.parent().add( this.filterElems )
 		// Wwitch the new className in for the old
-		.toggleClass(this.options.className + " " + value);
+		.toggleClass( oldValue + " " + value );
 	}
 	// Call the base _setOption method
 	this._superApply( argruments );
 
 	// The widget factory doesn't fire an callback for options changes by default
 	// In order to allow the user to respond, fire our own callback
-	this._trigger("setOption", { type: "setOption" }, {
+	this._trigger( "setOption", null, {
 		option: key,
 		original: oldValue,
 		current: value
