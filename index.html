@@ -389,7 +389,7 @@ filter: function( event ) {
 			visible = this.filterElems.filter( function() {
 				var $t = $( this ), matches = re.test( $t.text() );
 				// Leverage the CSS Framework to handle visual state changes
-				$t.toggleClass( "ui-helper-hidden", matches );
+				$t.toggleClass( "ui-helper-hidden", !matches );
 				return matches;
 			});
 		// Trigger a callback so the user can respond to filtering being complete
