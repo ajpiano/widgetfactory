@@ -137,9 +137,7 @@
 
 $( function() {
 	var r = $( "#foo" ).redman().data( "redman" );
-	setTimeout( function() {
-		r.destroy()
-	}, 2000 );
+	setTimeout( function() { r.destroy(); }, 2000 );
 });</pre>
 					<p>Works, but is not <a href="http://benalman.com/talks/idiomatic-jquery.html#13">idiomatic</a>,
 					nor does it abstract common plugin tasks</p>
