@@ -204,11 +204,14 @@
       ul {
         padding-left:0;
       }
+      ul ul {
+        font-size: 0.8em;
+      }
       li {
         list-style: none;
         padding: 10px 0;
         background-image:url(../images/jqueryui_logo_bullet.png);
-        background-position:left 50%;
+        background-position:left 15px;
         background-repeat:no-repeat;
         padding-left:24px;
         line-height:24px;
@@ -489,6 +492,7 @@
       
       .summary li::before, .bullets li::before {
         content: '· ';
+        vertical-align: top;
       }
  
       .stroke {

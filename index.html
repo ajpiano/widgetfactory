@@ -80,19 +80,18 @@
 					<section class="text">
 						<p>It's easy to extend the jQuery prototype (<code>jQuery.fn</code>) to make a <a href="http://docs.jquery.com/Plugins/Authoring">&ldquo;plugin&rdquo;</a> that operates on sets of elements.</p>
 			<pre class="brush: js; toolbar: false;">
-(function($) {
+(function( $ ) {
 	$.fn.redman = function() {
-		return this.each(function() {
-			$(this)
-			.addClass("wu-tang")
-			.css("color","red");
+		return this.each( function() {
+			$( this ).addClass( "wu-tang" )
+				.css( "color", "red" );
 		});
 	};
-})(jQuery);
+})( jQuery );
 </pre>
 		</section>
 				</div>
-		
+
 				<div class="slide">
 					<header>
 						<h1>State of Confusion</h1>
@@ -117,28 +116,30 @@
 					<section class="text muchMuchSmallerCode">
 						<p>Objects are a good way to organise code and maintain state</p>
 						<pre class="brush: js; toolbar: false;">
-(function($) {
-	function Redman(elem) {               
-		this.init(elem);
+( function( $ ) {
+	function Redman( elem ) {
+		this.init( elem );
 	}
-	Redman.prototype.init = function(elem) {
-		this.element = $(elem).addClass("wu-tang").css("color","red");
+	Redman.prototype.init = function( elem ) {
+		this.element = $( elem ).addClass( "wu-tang" ).css( "color", "red" );
 	};
 	Redman.prototype.destroy = function() {
-		this.element.removeClass("wu-tang").removeAttr("style").removeData("redman");
+		this.element.removeClass( "wu-tang" ).removeAttr( "style" ).removeData( "redman" );
 	};
 
 	$.fn.redman = function() {
-		return this.each(function() {
+		return this.each( function() {
 			// Instantiate a new Redman, storing the instance in the element's data cache
-			$.data(this,"redman",new Redman(this));
+			$.data( this, "redman", new Redman( this ) );
 		});
 	};
-})(jQuery);            
+})( jQuery );
 
-$(function() {
-	 var r = $("#foo").redman().data("redman");
-		setTimeout(function() { r.destroy() },2000);
+$( function() {
+	var r = $( "#foo" ).redman().data( "redman" );
+	setTimeout( function() {
+		r.destroy()
+	}, 2000 );
 });</pre>
 					<p>Works, but is not <a href="http://benalman.com/talks/idiomatic-jquery.html#13">idiomatic</a>,
 					nor does it abstract common plugin tasks</p>
@@ -162,7 +163,7 @@ $(function() {
 						<p>The <strong>jQuery UI Widget Factory</strong> is simply a function (<code>$.widget</code>) that takes a string name and an object
 						as arguments and creates a jQuery plugin and a "Class" to encapsulate its functionality.</p>
 			<pre class="brush: js; toolbar: false;">
-		$.widget("aj.filterable", { /* snip */ });
+		$.widget( "aj.filterable" , { /* snip */ });
 </pre>
 <p>Powers all the jQuery UI widgets, but it can stand alone</p>
 					</section>
@@ -182,15 +183,15 @@ $(function() {
 								<li>Extends jQuery prototype (<code>jQuery.fn.filterable</code>)</li>
 								<li>Merges defaults with user-supplied options</li>
 								<li>Stores plugin instance in <code>.data()</code></li>
-								<li>Methods accessible via string - <code>plugin("foo")</code> - or directly - <code>.foo()</code></li>
+								<li>Methods accessible via string - <code>plugin( "foo" )</code> - or directly - <code>.foo()</code></li>
 								<li>Prevents against multiple instantiation</li>
 								<li>Evented structure for handling setup, teardown, option changes</li>
-								<li>Easily expose callbacks: <code>._trigger("event")</code></li>
+								<li>Easily expose callbacks: <code>._trigger( "event" )</code></li>
 								<li>Sane default scoping (What is <code>this</code>?</code>)</li>
-								<li>Free pseudoselector! <code>$(":aj-filterable")</code></li>
+								<li>Free pseudoselector! <code>$( ":aj-filterable" )</code></li>
 				<li>Inheritance! Widgets can extend from other widgets
 					<pre class="brush: js; toolbar: false;">
-$.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
+$.widget( "aj.electricAccordion", $.ui.accordion, { /* snip */ });
 </pre>
 				</li>
 
@@ -214,9 +215,9 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 					</header>
 					<section class="text muchMuchSmallerCode" style="margin-top:100px">
 						<pre class="brush: js; toolbar: false;">
-(function($) {
+( function( $ ) {
 	// The jQuery.aj namespace will automatically be created if it doesn't exist
-	$.widget("aj.filterable", {
+	$.widget( "aj.filterable", {
 		// These options will be used as defaults
 		options: { className : "" },
 		_create: function() {
@@ -229,21 +230,21 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 		_hover: function() {
 			// Methods with an underscore are "private"
 		},
-		_setOption: function(key, value) {
+		_setOption: function( key, value ) {
 			// Use the _setOption method to respond to changes to options
-			switch(key) {
+			switch( key ) {
 				case "length":
 					break;
 			}
 			// and call the parent function too!
-			return this._superApply(arguments);
+			return this._superApply( arguments );
 		}
 		_destroy: function() {
 			// Use the destroy method to reverse everything your plugin has applied
 			return this._super();
 		},
 	});
-})(jQuery);
+})( jQuery );
 </pre>
 					</section>
 				</div>
@@ -256,12 +257,15 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 			<p>Methods prefixed with an underscore are, <em>by convention only</em>, private.</p>
 			<ul>
 				<li>These methods cannot be accessed via a plugin's public API:</li>
-				<li><code>$("#foo").filterable("_hover")</code> will not work</li>
+				<li><code>$( "#foo" ).filterable( "_hover" )</code> will not work</li>
 				<li>They are, however, accessible directly from the widget instance:</li>
-				<li><code>$("#foo").data("aj-filterable")._hover()</code> will</li>
-				<li><em>(1.9)</em> <code>$("#foo").data( "filterable" )</code> widget name.</li>
-				<li><em>(1.10)</em> <code>$("#foo").data( "aj-filterable" )</code> namespace-widget name</li>
-				<li><em>(1.11)</em> <code>$("#foo").filterable( "instance" )</code> no more confusion</li>
+				<li><code>$( "#foo" ).data( "aj-filterable" )._hover()</code> will
+					<ul>
+						<li><strong>(1.9)</strong> <code>$( "#foo" ).data( "filterable" )</code> widget name.</li>
+						<li><strong>(1.10)</strong> <code>$( "#foo" ).data( "aj-filterable" )</code> namespace-widget name</li>
+						<li><strong>(1.11)</strong> <code>$( "#foo" ).filterable( "instance" )</code> no more confusion</li>
+					</ul>
+				</li>
 				<li>They are also accessible on the widget's prototype</li>
 				<li><code style="font-size:90%;">$.aj.filterable.prototype._hover = function() { /* snip */ };</code>
 			</ul>
@@ -281,15 +285,15 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 // Parameters that must be initialised,
 // but are optional for the plugin user
 options: {
-	delay:250,
-	className:""
+	delay: 250,
+	className: ""
 }
 </pre>
 			<p>This is akin to a familiar step from basic jQuery plugin authoring</p>
 			<pre class="brush: js; toolbar: false;">
-$.fn.foo = function(opts) {
+$.fn.foo = function( opts ) {
 	var defaults = { bar: "baz" },
-		options = $.extend({},defaults,opts);
+		options = $.extend( {}, defaults, opts );
 };
 </pre>
 			</section>
@@ -312,10 +316,10 @@ _create: function() {
 
 	// Cache references to collections the widget needs to access regularly
 	this.filterElems = this.element.children()
-		.addClass("ui-widget-content "+this.options.className);
-	this.filterInput = $("&lt;input type='text'>")
-		.insertBefore(this.element)
-		.wrap("&lt;div class='ui-widget-header " + this.options.className + "'&gt;");
+		.addClass( "ui-widget-content " + this.options.className );
+	this.filterInput = $( "&lt;input type='text'>" )
+		.insertBefore( this.element )
+		.wrap( "&lt;div class='ui-widget-header " + this.options.className + "'&gt;" );
 
 	// bind events on elements: 
 	this._on( this.filterElems, {
@@ -337,7 +341,7 @@ _create: function() {
 
 		<div class="slide">
 					<header>
-			<h1><code>_trigger("finger")</code></h1>
+			<h1><code>_trigger( "finger" )</code></h1>
 					</header>
 					<section class="text muchSmallerCode">
 			<p>
@@ -347,11 +351,11 @@ _create: function() {
 // Signature
 this._trigger( "callbackName", [eventObject], [uiObject] )
 // Example
-this._trigger( "hover", e /* e.type == "mouseenter" */, { hovered: $(e.target)});
+this._trigger( "hover", e /* e.type == "mouseenter" */, { hovered: $( e.target )});
 // The user can subscribe using an option during initalization
-$("#elem").filterable({ hover: function(e,ui) { } });
+$( "#elem" ).filterable({ hover: function( event, ui ) { } });
 // Or with traditional event binding/delegation
-$("#elem").bind( "filterablehover" , function(e,ui) { } );
+$( "#elem" ).bind( "filterablehover" , function( event, ui ) { } );
 </pre>
 			<dl>
 			<dt><code>callbackName</code></dt>
@@ -376,29 +380,29 @@ $("#elem").bind( "filterablehover" , function(e,ui) { } );
 			<p>Store distinct pieces of functionality as separate methods.<br/>
 			If the user may need to invoke a function programmatically, expose it!</p>
 			<pre class="brush: js; toolbar: false;">
-filter: function(e) {
+filter: function( event ) {
 	// Debounce the keyup event with a timeout, using the specified delay
-	clearTimeout(this.timeout);
+	clearTimeout( this.timeout );
 	// like setTimeout, only better!
 	this.timeout = this._delay( function() {
-		var re = new RegExp(this.filterInput.val(), "i"),
-			visible = this.filterElems.filter(function() {
-				var $t = $(this), matches = re.test($t.text());
+		var re = new RegExp( this.filterInput.val(), "i" ),
+			visible = this.filterElems.filter( function() {
+				var $t = $( this ), matches = re.test( $t.text() );
 				// Leverage the CSS Framework to handle visual state changes
-				$t.toggleClass("ui-helper-hidden", !!matches);
+				$t.toggleClass( "ui-helper-hidden", matches );
 				return matches;
 			});
 		// Trigger a callback so the user can respond to filtering being complete
 		// Supply  an object of useful parameters with the second argument to _trigger
-		this._trigger("filtered", e, {
+		this._trigger( "filtered", event, {
 			visible: visible
 		});
-	}, this.options.delay);
+	}, this.options.delay );
 },
-_hover: function(e) {
-	$(e.target).toggleClass("ui-state-active", e.type == "mouseenter");
-	this._trigger("hover", e, {
-		hovered: $(e.target)
+_hover: function( event ) {
+	$( event.target ).toggleClass( "ui-state-active", e.type === "mouseenter" );
+	this._trigger( "hover", event, {
+		hovered: $( e.target )
 	});
 },
 </pre>
@@ -412,7 +416,7 @@ _hover: function(e) {
 					</header>
 					<section class="text muchMuchSmallerCode" style="line-height:30px;">
 			<p>Plugin users can change options after a plugin has been invoked using
-			<code>$("elem").filterable("option","className","newName");</code>.</p>
+			<code>$( "elem" ).filterable( "option", "className", "newName" );</code>.</p>
 			<p>If modifiying a particular option requires an immediate state change, use the <code>_setOption</code>
 			method to listen for the change and act on it.</p>
 			<pre class="brush: js; toolbar: false; highlight:[3,4]">
@@ -457,7 +461,7 @@ _destroy: function() {
 	this.filterInput.parent().remove();
 
 	// Remove any classes, including CSS framework classes, that you applied
-	this.filterElems.removeClass("ui-widget-content ui-helper-hidden ui-state-active " + this.options.className);
+	this.filterElems.removeClass( "ui-widget-content ui-helper-hidden ui-state-active " + this.options.className );
 
 	this._super();
 }
@@ -551,10 +555,10 @@ var total = $("#total"), cheeses = $("#cheeses"), register = $("#register"), pri
 						</ul>
 						<pre class="brush: js; toolbar: false;">
 // An incredibly contrived example
-$.widget("ui.dialog", $.ui.dialog, {
+$.widget( "ui.dialog", $.ui.dialog, {
 	close: function() {
-		if (confirm( "Is it closing time?" )) {
-			this._super("close");
+		if ( confirm( "Is it closing time?" ) ) {
+			this._super();
 		}
 	}
 });</pre>
@@ -572,10 +576,10 @@ $.widget("ui.dialog", $.ui.dialog, {
 						</ul>
 						<pre class="brush: js; toolbar: false;">
 // Create a brand new dialog widget from scratch
-$.widget("my.awesomeDialog", {/* snip */});
+$.widget( "my.awesomeDialog", {/* snip */});
 
 // Use the bridge to assign it to jQuery.fn.dialog
-$.widget.bridge("dialog", $.my.awesomeDialog);
+$.widget.bridge( "dialog", $.my.awesomeDialog );
 </pre>
 						</section>
 				</div>
@@ -627,7 +631,7 @@ $.widget.bridge("dialog", $.my.awesomeDialog);
 		</div>
 		<div class="slide">
 					<header>
-						<h1>revisionist history</h1>
+						<h1>Revisionist History</h1>
 					</header>
 					<section class="text">
 					<ul>
