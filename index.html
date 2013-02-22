@@ -1,223 +1,221 @@
-
 <!DOCTYPE html>
 <!--
-  The jQuery UI Widget Factory: WAT?
-  by adam j. sontag
-  WTFPL License
+	The jQuery UI Widget Factory: WAT?
+	by adam j. sontag
+	updated by corey frang
+	WTFPL License
 
-  If you want the cool kid fonts for this preso:
-  http://www.fontsquirrel.com/fontfacedemo/ChunkFive
-  http://www.fontsquirrel.com/fontfacedemo/CartoGothic-Std
+	If you want the cool kid fonts for this preso:
+	http://www.fontsquirrel.com/fontfacedemo/ChunkFive
+	http://www.fontsquirrel.com/fontfacedemo/CartoGothic-Std
 
-  This all refers to the Presentation slides or whatever.
-  vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+	This all refers to the Presentation slides or whatever.
+	vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-  Copyright 2010 Google Inc.
+	Copyright 2010 Google Inc.
 
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
 
-     http://www.apache.org/licenses/LICENSE-2.0
+		 http://www.apache.org/licenses/LICENSE-2.0
 
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
 
-  Original slides: Marcin Wichary (mwichary@google.com)
-  Modifications: Ernest Delgado (ernestd@google.com)
-                 Alex Russell (slightlyoff@chromium.org)
-                 Brad Neuberg
+	Original slides: Marcin Wichary (mwichary@google.com)
+	Modifications: Ernest Delgado (ernestd@google.com)
+								 Alex Russell (slightlyoff@chromium.org)
+								 Brad Neuberg
 -->
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
-    <title>jQuery UI Widget Factory</title>
-    <link rel="shortcut icon" href="/images/favicon.ico" />
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" /> 
-    
-    <link href="css/fonts.css" rel="stylesheet" type="text/css" />
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
-    <link href="css/syntax.css" rel="stylesheet" type="text/css" />
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+		<title>jQuery UI Widget Factory</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon" /> 
+		
+		<link href="css/fonts.css" rel="stylesheet" type="text/css" />
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<link href="css/syntax.css" rel="stylesheet" type="text/css" />
+		<link href="css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" type="text/css" />
 
-  </head>
-  <body>
-    <div class="presentation">
-      <div id="presentation-counter"></div>
-      <div class="slides">
-        <div class="slide" id="intro">
-          <div class="bg">
-            <section class="middle landing">
-              <h1>The jQuery UI Widget Factory<br/><span class='subtitle'>WAT?</span></h1>
-              <h4>adam j. sontag</h4>
-            </section>
-            </div>
-            <div id="welcome">
-              <p>
-                <strong>Thanks for coming!</strong></p>
-                <p><em>Fixing These jQuery</em> is an HTML5 presentation designed to familiarise developers with basic approaches to debugging
-                jQuery and JavaScript code. It also introduces many of the common pitfalls most people encounter at some point on their jQuery journey.
-                It is always a work in progress!
-              </p>
-              <p>Use the left <span class='key'>&larr;</span> and right <span class='key'>&rarr;</span> arrow keys or your mouse wheel to navigate.</p>
-          </div>
-        </div>
+	</head>
+	<body>
+		<div class="presentation">
+			<div id="presentation-counter"></div>
+			<div class="slides">
+				<div class="slide" id="intro">
+					<div class="bg">
+						<section class="middle landing">
+							<h1>The jQuery UI Widget Factory<br/><span class='subtitle'>WAT?</span></h1>
+							<h4>adam j. sontag</h4>
+							<h4>corey frang</h4>
+						</section>
+						</div>
+						<div id="welcome">
+							<p>
+								<strong>Thanks for coming!</strong></p>
+								<p><em>The jQuery UI Widget Factory</em> is an HTML5 presentation designed to familiarise developers with basic approaches to debugging
+								jQuery and JavaScript code. It also introduces many of the common pitfalls most people encounter at some point on their jQuery journey.
+								It is always a work in progress!
+							</p>
+							<p>Use the left <span class='key'>&larr;</span> and right <span class='key'>&rarr;</span> arrow keys or your mouse wheel to navigate.</p>
+					</div>
+				</div>
 	
-        <div class="slide">
-		  <header class="moreLegit">
+				<div class="slide">
+			<header class="moreLegit">
 			<h1 class="middleGuy">ajpiano.com/widgetfactory</h1>
-		  </header>
-        </div>
-
-
-        <div class="slide">
-          <header>
-            <h1>Easy Plugins Are Easy</h1>
-          </header>
-          <section class="text">
-            <p>It's easy to extend the jQuery prototype (<code>jQuery.fn</code>) to make a <a href="http://docs.jquery.com/Plugins/Authoring">&ldquo;plugin&rdquo;</a> that operates on sets of elements.</p>
-	    <pre class="brush: js; toolbar: false;">
-(function($) {
-  $.fn.redman = function() {
-    return this.each(function() {
-      $(this)
-      .addClass("wu-tang")
-      .css("color","red");
-    });
-  };
-})(jQuery);
+			</header>
+				</div>
+				<div class="slide">
+					<header>
+						<h1>Easy Plugins Are Easy</h1>
+					</header>
+					<section class="text">
+						<p>It's easy to extend the jQuery prototype (<code>jQuery.fn</code>) to make a <a href="http://docs.jquery.com/Plugins/Authoring">&ldquo;plugin&rdquo;</a> that operates on sets of elements.</p>
+			<pre class="brush: js; toolbar: false;">
+(function( $ ) {
+	$.fn.redman = function() {
+		return this.each( function() {
+			$( this ).addClass( "wu-tang" )
+				.css( "color", "red" );
+		});
+	};
+})( jQuery );
 </pre>
 		</section>
-        </div>
-		
-        <div class="slide">
-          <header>
-            <h1>State of Confusion</h1>
-          </header>
-          <section class="text">
-            <p><a href="http://en.wikipedia.org/wiki/State_(computer_science)">Stateful</a> plugins are not as straightforward, but really useful.</p>
-            <ul>
-              <li>Reverse the plugin's effect?</li>
-              <li>Allow plugin users to react to events bound by the plugin?</li>
-              <li>Change the plugin's effect after it has been applied?</li>
-              <li><em>Remember: only one function in the <code>$.fn</code> namespace!</em></li>
-              <li>Fine! But how can I even invoke "sub-methods?"</li>
-            </ul>
-            <p>But that <a href="http://jqueryui.com">jQuery UI</a> thing has lots of plugins that let users do all that stuff! <strong>How?</strong></p>
-          </section>
-        </div>
+				</div>
+
+				<div class="slide">
+					<header>
+						<h1>State of Confusion</h1>
+					</header>
+					<section class="text">
+						<p><a href="http://en.wikipedia.org/wiki/State_(computer_science)">Stateful</a> plugins are not as straightforward, but really useful.</p>
+						<ul>
+							<li>Reverse the plugin's effect?</li>
+							<li>Allow plugin users to react to events triggered by the plugin?</li>
+							<li>Change the plugin's effect after it has been applied?</li>
+							<li><em>Remember: only one function in the <code>$.fn</code> namespace!</em></li>
+							<li>Fine! But how can I even invoke "sub-methods?"</li>
+						</ul>
+						<p>But that <a href="http://jqueryui.com">jQuery UI</a> thing has lots of plugins that let users do all that stuff! <strong>How?</strong></p>
+					</section>
+				</div>
 	
-        <div class="slide">
-          <header>
-            <h1>You down with OOP?</h1>
-          </header>
-          <section class="text muchMuchSmallerCode">
-            <p>Objects are a good way to organise code and maintain state</p>
-            <pre class="brush: js; toolbar: false;">
-(function($) {
-    function Redman(elem) {               
-        this.init(elem);
-    }
-    Redman.prototype.init = function(elem) {
-        this.element = $(elem).addClass("wu-tang").css("color","red");
-    };
-    Redman.prototype.destroy = function() {
-        this.element.removeClass("wu-tang").removeAttr("style");
-    };
+				<div class="slide">
+					<header>
+						<h1>You down with OOP?</h1>
+					</header>
+					<section class="text muchMuchSmallerCode">
+						<p>Objects are a good way to organise code and maintain state</p>
+						<pre class="brush: js; toolbar: false;">
+( function( $ ) {
+	function Redman( elem ) {
+		this.init( elem );
+	}
+	Redman.prototype.init = function( elem ) {
+		this.element = $( elem ).addClass( "wu-tang" ).css( "color", "red" );
+	};
+	Redman.prototype.destroy = function() {
+		this.element.removeClass( "wu-tang" ).removeAttr( "style" ).removeData( "redman" );
+	};
 
-    $.fn.redman = function() {
-        return this.each(function() {
+	$.fn.redman = function() {
+		return this.each( function() {
 			// Instantiate a new Redman, storing the instance in the element's data cache
-            $.data(this,"redman",new Redman(this));
-        });
-     };
-})(jQuery);            
+			$.data( this, "redman", new Redman( this ) );
+		});
+	};
+})( jQuery );
 
-$(function() {
-   var r = $("#foo").redman().data("redman");
-    setTimeout(function() { r.destroy() },2000);
+$( function() {
+	var r = $( "#foo" ).redman().data( "redman" );
+	setTimeout( function() { r.destroy(); }, 2000 );
 });</pre>
-          <p>Works, but is not <a href="http://benalman.com/talks/idiomatic-jquery.html#13">idiomatic</a>,
-          nor does it abstract common plugin tasks</p>
-          </section>
-        </div>
+					<p>Works, but is not <a href="http://benalman.com/talks/idiomatic-jquery.html#13">idiomatic</a>,
+					nor does it abstract common plugin tasks</p>
+					</section>
+				</div>
 
 
-        <div class="slide">
-          <header>
-            <h1>The Manufacturing Business</h1>
-          </header>
-          <section class="text smallerCode">
-            <figure class="floaty-figure ffright ui-widget-content">
-              <img src="images/introduceafactory.jpg"/>
-              <figcaption>
-                A factory is for making things.
-              </figcaption>
-            </figure>
-            <p>The <a href="http://gsraj.tripod.com/design/creational/factory/factory.html">factory pattern</a> is a way to
-            generate different objects with a common interface.</p>
-            <p>The <strong>jQuery UI Widget Factory</strong> is simply a function (<code>$.widget</code>) that takes a string name and an object
-            as arguments and creates a jQuery plugin and a "Class" to encapsulate its functionality.</p>
-	    <pre class="brush: js; toolbar: false;">
-    $.widget("aj.filterable", { /* snip */ });
+				<div class="slide">
+					<header>
+						<h1>The Manufacturing Business</h1>
+					</header>
+					<section class="text smallerCode">
+						<figure class="floaty-figure ffright ui-widget-content">
+							<img src="images/introduceafactory.jpg"/>
+							<figcaption>
+								A factory is for making things.
+							</figcaption>
+						</figure>
+						<p>The <a href="http://gsraj.tripod.com/design/creational/factory/factory.html">factory pattern</a> is a way to
+						generate different objects with a common interface.</p>
+						<p>The <strong>jQuery UI Widget Factory</strong> is simply a function (<code>$.widget</code>) that takes a string name and an object
+						as arguments and creates a jQuery plugin and a "Class" to encapsulate its functionality.</p>
+			<pre class="brush: js; toolbar: false;">
+		$.widget( "aj.filterable" , { /* snip */ });
 </pre>
 <p>Powers all the jQuery UI widgets, but it can stand alone</p>
-          </section>
-        </div>
+					</section>
+				</div>
 	
 		
 	
-        <div class="slide">
-          <header>
-            <h1>SWAG</h1>
-          </header>
-          <section class="text muchSmallerCode">
-            <p>The widget factory provides a number of plugin conveniences</p>
-              <ul class="lots-of-bullets">
+				<div class="slide">
+					<header>
+						<h1>SWAG</h1>
+					</header>
+					<section class="text muchSmallerCode">
+						<p>The widget factory provides a number of plugin conveniences</p>
+							<ul class="lots-of-bullets">
 				<li>Creates your namespace, if necessary (<code>jQuery.aj</code>)</li>
-                <li>Encapsulated class (<code>jQuery.aj.filterable.prototype</code>)</li>
-                <li>Extends jQuery prototype (<code>jQuery.fn.filterable</code>)</li>
-                <li>Merges defaults with user-supplied options</li>
-                <li>Stores plugin instance in <code>.data()</code></li>
-                <li>Methods accessible via string - <code>plugin("foo")</code> - or directly - <code>.foo()</code></li>
-                <li>Prevents against multiple instantiation</li>
-                <li>Evented structure for handling setup, teardown, option changes</li>
-                <li>Easily expose callbacks: <code>._trigger("event")</code></li>
-                <li>Sane default scoping (What is <code>this</code>?</code>)</li>
-                <li>Free pseudoselector! <code>$(":ui-tabs")</code></li>
+								<li>Encapsulated class (<code>jQuery.aj.filterable.prototype</code>)</li>
+								<li>Extends jQuery prototype (<code>jQuery.fn.filterable</code>)</li>
+								<li>Merges defaults with user-supplied options</li>
+								<li>Stores plugin instance in <code>.data()</code></li>
+								<li>Methods accessible via string - <code>plugin( "foo" )</code> - or directly - <code>.foo()</code></li>
+								<li>Prevents against multiple instantiation</li>
+								<li>Evented structure for handling setup, teardown, option changes</li>
+								<li>Easily expose callbacks: <code>._trigger( "event" )</code></li>
+								<li>Sane default scoping (What is <code>this</code>?</code>)</li>
+								<li>Free pseudoselector! <code>$( ":aj-filterable" )</code></li>
 				<li>Inheritance! Widgets can extend from other widgets
-				  <pre class="brush: js; toolbar: false;">
-$.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
+					<pre class="brush: js; toolbar: false;">
+$.widget( "aj.electricAccordion", $.ui.accordion, { /* snip */ });
 </pre>
 				</li>
 
-              </ul>
-	  </section>
-        </div>
+							</ul>
+		</section>
+				</div>
 
 		<div class="slide"> 
 			<header> 
-            <h1>Let's Rotate These Tires</h1> 
-            <section> 
-              <p class="quoteThing ui-widget-header">Building a simple filtering widget in almost no time flat</p> 
-            </section> 
-          </header> 
-        </div> 
+						<h1>Let's Rotate These Tires</h1> 
+						<section> 
+							<p class="quoteThing ui-widget-header">Building a simple filtering widget in almost no time flat</p> 
+						</section> 
+					</header> 
+				</div> 
 
 
-        <div class="slide">
-          <header>
-            <h1>How do I use this thing?</h1>
-          </header>
-          <section class="text muchMuchSmallerCode" style="margin-top:100px">
-            <pre class="brush: js; toolbar: false;">
-(function($) {
+				<div class="slide">
+					<header>
+						<h1>How do I use this thing?</h1>
+					</header>
+					<section class="text muchMuchSmallerCode" style="margin-top:100px">
+						<pre class="brush: js; toolbar: false;">
+( function( $ ) {
 	// The jQuery.aj namespace will automatically be created if it doesn't exist
-	$.widget("aj.filterable", {
+	$.widget( "aj.filterable", {
 		// These options will be used as defaults
 		options: { className : "" },
 		_create: function() {
@@ -229,245 +227,251 @@ $.widget("aj.electricAccordion",$.ui.accordion,{ /* snip */ });
 		},
 		_hover: function() {
 			// Methods with an underscore are "private"
-		}
-		_setOption: function(key, value) {
+		},
+		_setOption: function( key, value ) {
 			// Use the _setOption method to respond to changes to options
-			switch(key) {
+			switch( key ) {
 				case "length":
 					break;
 			}
-			$.Widget.prototype._setOption.apply(this,arguments)
-		},
-		destroy: function() {
-			// Use the destroy method to reverse everything your plugin has applied
-			$.Widget.prototype.destroy.call(this);
+			// and call the parent function too!
+			return this._superApply( arguments );
 		}
+		_destroy: function() {
+			// Use the destroy method to reverse everything your plugin has applied
+			return this._super();
+		},
 	});
-})(jQuery);
-
+})( jQuery );
 </pre>
-          </section>
-        </div>
+					</section>
+				</div>
 
-        <div class="slide">
-          <header>
-            <h1>I Can See Your Privates</h1>
-          </header>
-          <section class="text smallerCode">
+				<div class="slide">
+					<header>
+						<h1>I Can See Your Privates</h1>
+					</header>
+					<section class="text smallerCode">
 			<p>Methods prefixed with an underscore are, <em>by convention only</em>, private.</p>
 			<ul>
-			  <li>These methods cannot be accessed via a plugin's public API:</li>
-			  <li><code>$("#foo").filterable("_hover")</code> will not work</li>
-			  <li>They are, however, accessible directly from the widget instance:</li>
-			  <li><code>$("#foo").data("filterable")._hover()</code> will</li>
-			  <li>They are also accessible on the widget's prototype</li>
-			  <li><code style="font-size:90%;">$.aj.filterable.prototype._hover = function() { /* snip */ };</code>
+				<li>These methods cannot be accessed via a plugin's public API:</li>
+				<li><code>$( "#foo" ).filterable( "_hover" )</code> will not work</li>
+				<li>They are, however, accessible directly from the widget instance:</li>
+				<li><code>$( "#foo" ).data( "aj-filterable" )._hover()</code> will
+					<ul>
+						<li><strong>(1.9)</strong> <code>$( "#foo" ).data( "filterable" )</code> widget name.</li>
+						<li><strong>(1.10)</strong> <code>$( "#foo" ).data( "aj-filterable" )</code> namespace-widget name</li>
+						<li><strong>(1.11)</strong> <code>$( "#foo" ).filterable( "instance" )</code> no more confusion</li>
+					</ul>
+				</li>
+				<li>They are also accessible on the widget's prototype</li>
+				<li><code style="font-size:90%;">$.aj.filterable.prototype._hover = function() { /* snip */ };</code>
 			</ul>
-		  </section>
+			</section>
 		</div>
 
 
 		<div class="slide">
-          <header>
-            <h1>Clothing Optional</h1>
-          </header>
-          <section class="text smallerCode">
+					<header>
+						<h1>Clothing Optional</h1>
+					</header>
+					<section class="text smallerCode">
 			<p>
-			  Provide an object at the <code>options</code> key to provide defaults.</br>
+				Provide an object at the <code>options</code> key to provide defaults.</br>
 			</p>
 			<pre class="brush: js; toolbar: false;">
 // Parameters that must be initialised,
 // but are optional for the plugin user
-options:{
-  delay:250,
-  className:""
-} </pre>
+options: {
+	delay: 250,
+	className: ""
+}
+</pre>
 			<p>This is akin to a familiar step from basic jQuery plugin authoring</p>
 			<pre class="brush: js; toolbar: false;">
-$.fn.foo = function(opts) {
-  var defaults = {bar:"baz"},
-	  options = $.extend({},defaults,opts);
+$.fn.foo = function( opts ) {
+	var defaults = { bar: "baz" },
+		options = $.extend( {}, defaults, opts );
 };
 </pre>
-		  </section>
+			</section>
 		</div>
 
 
 		<div class="slide">
-          <header>
-            <h1>In The Beginning...</h1>
-          </header>
-          <section class="text muchMuchSmallerCode">
+					<header>
+						<h1>In The Beginning...</h1>
+					</header>
+					<section class="text muchMuchSmallerCode">
 			<p>
-			  Use the <code>_create</code> method to set up your widget. 
-			  It is called the first time that the plugin is invoked on an element.
+				Use the <code>_create</code> method to set up your widget. 
+				It is called the first time that the plugin is invoked on an element.
 			</p>
-			<pre class="brush: js; toolbar: false; highlight:[8,13]">
+			<pre class="brush: js; toolbar: false;">
 _create: function() {
 	// this.element -- a jQuery object of the element the widget was invoked on.
 	// this.options --  the merged options hash
 
 	// Cache references to collections the widget needs to access regularly
 	this.filterElems = this.element.children()
-					   .addClass("ui-widget-content "+this.options.className)
-					   .bind("mouseenter.filterable mouseleave.filterable",this._hover);
+		.addClass( "ui-widget-content " + this.options.className );
+	this.filterInput = $( "&lt;input type='text'>" )
+		.insertBefore( this.element )
+		.wrap( "&lt;div class='ui-widget-header " + this.options.className + "'&gt;" );
 
-	// Create and add any new elements that are used by the widget
-	// Bind event handlers
-	this.filterInput = $("&lt;input&gt;", { type: "text" }) .insertBefore(this.element)
-					   .bind("keyup.filterable",$.proxy(this, "filter"))
-	// Optional: Integrate with the jQuery UI CSS Framework
-					   .wrap("&lt;div class='ui-widget-header "+this.options.className+"'&gt;");
+	// bind events on elements: 
+	this._on( this.filterElems, {
+		mouseenter: "_hover",
+		mouseleave: "_hover"
+	});
 
-	// Initialise any other instance-wide variables
+	// toggles ui-state-focus for you:
+	this._focusable( this.filterInput );
+	// _hoverable works for ui-state-hover, but we will do something slighty different in our hover
+	this._on( this.filterInput, {
+		"keyup": "filter"
+	});
 	this.timeout = false;
 }</pre>
-		  <p>Be a good citizen and <em>namespace your event handlers</em></p>
-          </section>
-        </div>
+					</section>
+				</div>
 
 
 		<div class="slide">
-          <header>
-			<h1><code>_trigger("finger")</code></h1>
-          </header>
-          <section class="text muchSmallerCode">
+					<header>
+			<h1><code>_trigger( "finger" )</code></h1>
+					</header>
+					<section class="text muchSmallerCode">
 			<p>
-			  The <code>_trigger</code> method fires an event the plugin user can...use.
+				The <code>_trigger</code> method fires an event the plugin user can...use.
 			</p>
 			<pre class="brush: js; toolbar: false;">
 // Signature
-this._trigger( "callbackName" , [eventObject], [uiObject] )
+this._trigger( "callbackName", [eventObject], [uiObject] )
 // Example
-this._trigger( "hover", e /* e.type == "mouseenter" */, { hovered: $(e.target)});
-// The user can subscribe using an init option
-$("#elem").filterable( { hover: function(e,ui) { } } );
+this._trigger( "hover", e /* e.type == "mouseenter" */, { hovered: $( e.target )});
+// The user can subscribe using an option during initalization
+$( "#elem" ).filterable({ hover: function( event, ui ) { } });
 // Or with traditional event binding/delegation
-$("#elem").bind( "filterablehover" , function(e,ui) { } );
+$( "#elem" ).bind( "filterablehover" , function( event, ui ) { } );
 </pre>
-		  <dl>
+			<dl>
 			<dt><code>callbackName</code></dt>
 			<dd>The name of the event you want to dispatch</dd>
 			<dt><code>eventObject</code> (Optional)</dt>
-			<dd>An (mocked) event object.  <code>_trigger</code> wraps this object and stores it in <code>event.originalEvent</code></dd>
+			<dd>An event object (or null).  <code>_trigger</code> wraps this object and stores it in <code>event.originalEvent</code></dd>
 			<dd>The user receives an object with event.type == <code>this.widgetEventPrefix + "eventname"</code></dd>
 			<dt><code>uiObject</code> (Optional)</dt>
 			<dd>An object containing useful properties the user may need to access.</dd>
 			<dd><strong>Protip:</strong> Use a method like <code>._ui</code> to generate objects with a consistent schema.</dd>
-		  </dl>
-          </section>
-        </div>
+			</dl>
+					</section>
+				</div>
 
 
 
 		<div class="slide">
-          <header>
-            <h1>Getting Organised</h1>
-          </header>
-          <section class="text muchMuchSmallerCode">
+					<header>
+						<h1>Getting Organised</h1>
+					</header>
+					<section class="text muchMuchSmallerCode">
 			<p>Store distinct pieces of functionality as separate methods.<br/>
 			If the user may need to invoke a function programmatically, expose it!</p>
 			<pre class="brush: js; toolbar: false;">
-filter: function(e) {
+filter: function( event ) {
 	// Debounce the keyup event with a timeout, using the specified delay
-	this.timeout &amp;&amp; clearTimeout(this.timeout);
-	this.timeout = setTimeout($.proxy(function() {
-		var re = new RegExp(this.filterInput.val(), "ig"),
-			visible = this.filterElems.filter(function() {
-			  var $t = $(this), matches = re.test($t.text()), method = (matches ? "remove": "add") + "Class";
-			  // Leverage the CSS Framework to handle visual state changes
-			  $t[method]("ui-helper-hidden");
-			  return matches;
+	clearTimeout( this.timeout );
+	// like setTimeout, only better!
+	this.timeout = this._delay( function() {
+		var re = new RegExp( this.filterInput.val(), "i" ),
+			visible = this.filterElems.filter( function() {
+				var $t = $( this ), matches = re.test( $t.text() );
+				// Leverage the CSS Framework to handle visual state changes
+				$t.toggleClass( "ui-helper-hidden", !matches );
+				return matches;
 			});
 		// Trigger a callback so the user can respond to filtering being complete
 		// Supply  an object of useful parameters with the second argument to _trigger
-		this._trigger("filtered", e, {
+		this._trigger( "filtered", event, {
 			visible: visible
 		});
-	},
-	this), this.options.delay);
+	}, this.options.delay );
 },
-_hover: function(e) {
-	$(e.target)[(e.type == "mouseenter" ? "add": "remove") + "Class"]("ui-state-active");
-	this._trigger("hover", e, {
-		hovered: $(e.target)
+_hover: function( event ) {
+	$( event.target ).toggleClass( "ui-state-active", e.type === "mouseenter" );
+	this._trigger( "hover", event, {
+		hovered: $( e.target )
 	});
 },
 </pre>
-		  <p></p>
-          </section>
-        </div>
+			<p></p>
+					</section>
+				</div>
 
-        <div class="slide">
-          <header>
-            <h1>Ch-ch-ch-ch-changes</h1>
-          </header>
-          <section class="text muchMuchSmallerCode" style="line-height:30px;">
+				<div class="slide">
+					<header>
+						<h1>Ch-ch-ch-ch-changes</h1>
+					</header>
+					<section class="text muchMuchSmallerCode" style="line-height:30px;">
 			<p>Plugin users can change options after a plugin has been invoked using
 			<code>$("elem").filterable("option","className","newName");</code>.</p>
 			<p>If modifiying a particular option requires an immediate state change, use the <code>_setOption</code>
 			method to listen for the change and act on it.</p>
 			<pre class="brush: js; toolbar: false; highlight:[3,4]">
-_setOption: function(key, value) {
-	var oldValue = this.options[key];
+_setOption: function( key, value ) {
+	var oldValue = this.options[ key ];
 	// Check for a particular option being set
-	if (key == "className") {
+	if ( key === "className" ) {
 		// Gather all the elements we applied the className to
-		this.filterInput.parent().add(this.filterElems)
+		this.filterInput.parent().add( this.filterElems )
 		// Wwitch the new className in for the old
-		.toggleClass(this.options.className + " " + value);
+		.toggleClass( oldValue + " " + value );
 	}
 	// Call the base _setOption method
-	$.Widget.prototype._setOption.apply(this, arguments);
+	this._superApply( argruments );
 
 	// The widget factory doesn't fire an callback for options changes by default
 	// In order to allow the user to respond, fire our own callback
-	this._trigger("setOption", { type: "setOption" }, {
+	this._trigger( "setOption", null, {
 		option: key,
 		original: oldValue,
 		current: value
 	});
 },
 </pre>
-          </section>
-        </div>
+					</section>
+				</div>
 
 		
 
 
 		<div class="slide">
-          <header>
-            <h1>Control-Z</h1>
-          </header>
-          <section class="text muchSmallerCode">
+					<header>
+						<h1>Control-Z</h1>
+					</header>
+					<section class="text muchSmallerCode">
 			<p>
-			  Use the <code>destroy</code> method to revert an element back to its state from before plugin invocation. 
+				Use the <code>destroy</code> method to revert an element back to its state from before plugin invocation. 
 			</p>
 			<pre class="brush: js; toolbar: false;">
-destroy: function() {
+_destroy: function() {
 	// Remove any new elements that you created
 	this.filterInput.parent().remove();
 
-	// Unbind any events that may still exist
-	this.filterElems.unbind(".filterable")
 	// Remove any classes, including CSS framework classes, that you applied
-	.removeClass("ui-widget-content ui-helper-hidden ui-state-active " + this.options.className);
-	
-	this._trigger("destroy",{type:"destroy"},{options:this.options});
+	this.filterElems.removeClass( "ui-widget-content ui-helper-hidden ui-state-active " + this.options.className );
 
-	// After you're done, you still need to invoke the "base" destroy method
-	// Does nice things like unbind all namespaced events on the original element
-	$.Widget.prototype.destroy.call(this);
+	this._super();
 }
 </pre>
-          </section>
-        </div>
+					</section>
+				</div>
 
 		<div class="slide">
-          <header>
-            <h1>A Cheesy Example</h1>
-          </header>
-          <section class="text muchMuchSmallerCode" style="margin-top:100px">
+					<header>
+						<h1>A Cheesy Example</h1>
+					</header>
+					<section class="text muchMuchSmallerCode" style="margin-top:100px">
 			<pre class="brush: html; toolbar: false;">
 &lt;ul id=&quot;cheeses&quot;&gt;
 	&lt;li data-price=&quot;17.99&quot;&gt;Gruyere&lt;/li&gt;
@@ -483,521 +487,510 @@ destroy: function() {
 </pre>
 			<div style="font-size:70%">
 			<button type="button" id="activation">Toggle Filterable</button>
-			  <ul id="cheeses">
+				<ul id="cheeses">
 				<li data-price="17.99">Gruyere</li>
 				<li data-price="16.99">Comte</li>
 				<li data-price="4.99">Provolone</li>
 				<li data-price="8.99">Cheddar</li>
 				<li data-price="18.99">Parmigiano Reggiano</li>
 				<li data-price=".99">Government</li>
-			  </ul>
-			  <div id="register">
+				</ul>
+				<div id="register">
 				One pound of each would cost $<span id="total"></span>
-			  </div>
+				</div>
 			</div>
-          </section>
-        </div>
+					</section>
+				</div>
 
 
 		<div class="slide">
-          <header>
-            <h1>State + Events = Extensibility</h1>
-          </header>
-          <section class="text muchMuchSmallerCode">
-		  <p>A good widget provides a solid base with callbacks for customisation.</p>
+					<header>
+						<h1>State + Events = Extensibility</h1>
+					</header>
+					<section class="text muchMuchSmallerCode">
+			<p>A good widget provides a solid base with callbacks for customisation.</p>
 		<pre class="brush: js; toolbar: false;">
 var total = $("#total"), cheeses = $("#cheeses"), register = $("#register"), price = $("&lt;span&gt;"),
 	activation = $("#activation").button({icons:{primary:"ui-icon-search"}}).toggle(function() {
-	  cheeses.filterable({
-		  className: "cheese",
-		  create: function() { register.addClass("ui-widget-header cheese").show(); },
-		  filtered: function(e, ui) {
-			  var t = 0;
-			  ui.visible.each(function() { t = t + $(this).data("price"); });
-			  total.text(t.toFixed(2));
-		  },
-		  setOption: function(e, ui) {
-			  ui.option == "className" &amp;&amp; register.toggleClass([ui.original, ui.current].join(" "));
-		  },
-		  hover: function(e, ui) {
-			  if (e.originalEvent.type == "mouseenter") {
-				  price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
-			  } else {
-				  price.detach();
-			  }
-		  }
-	  }).bind("filterabledestroy", function(e,ui) {
-		  register.removeClass("ui-widget-header "+ui.options.className).hide();
-	  }).filterable("filter");
-	  setTimeout(function() { cheeses.filterable("option", "className", "cheesePlease"); },3000);
-  },
-  function() {
-	  cheeses.filterable("destroy");
-  });
+		cheeses.filterable({
+			className: "cheese",
+			create: function() { register.addClass("ui-widget-header cheese").show(); },
+			filtered: function(e, ui) {
+				var t = 0;
+				ui.visible.each(function() { t = t + $(this).data("price"); });
+				total.text(t.toFixed(2));
+			},
+			setOption: function(e, ui) {
+				ui.option == "className" &amp;&amp; register.toggleClass([ui.original, ui.current].join(" "));
+			},
+			hover: function(e, ui) {
+				if (e.originalEvent.type == "mouseenter") {
+					price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
+				} else {
+					price.detach();
+				}
+			}
+		}).bind("filterabledestroy", function(e,ui) {
+			register.removeClass("ui-widget-header "+ui.options.className).hide();
+		}).filterable("filter");
+		setTimeout(function() { cheeses.filterable("option", "className", "cheesePlease"); },3000);
+	},
+	function() {
+		cheeses.filterable("destroy");
+	});
 </pre>
-          </section>
-        </div>
+					</section>
+				</div>
 
-
-        <div class="slide">
-          <header>
-            <h1>1.9 is gonna be <code>.super()</code></h1>
-            </header>
-            <section class="text smallerCode">
-              <h2>1.7/1.8</h2>
-              <pre class="brush: js; toolbar: false;">
-// Inheritance works, but you have to type a lot
-// and access methods publicly
-_setOption: function(key, value) {
-  // Handle the option change and then
-  $.Widget.prototype._setOption.call(this, key, value);
-}
-</pre>
-              <h2>1.9+</h2>
-              <pre class="brush: js; toolbar: false;">
-_setOption: function(key, value) {
-  // Handle the option change and then
-  this._super("_setOption", key, value);
-}
-</pre>
-            </section>
-        </div>
-
-        <div class="slide">
-          <header>
-            <h1>It's <code>.widget()</code> all the way down</h1>
-            </header>
-            <section class="text smallerCode">
-            <ul>
-              <li>In 1.9, a widget can "inherit" from itself</li>
-              <li>This is the ideal way to extend widgets</li>
-            </ul>
-            <pre class="brush: js; toolbar: false;">
+				<div class="slide">
+					<header>
+						<h1>It's <code>.widget()</code> all the way down</h1>
+						</header>
+						<section class="text smallerCode">
+						<ul>
+							<li>In 1.9, a widget can "inherit" from itself</li>
+							<li>This is the ideal way to extend widgets</li>
+						</ul>
+						<pre class="brush: js; toolbar: false;">
 // An incredibly contrived example
-$.widget("ui.dialog", $.ui.dialog, {
-  close: function() {
-    if (confirm( "Is it closing time?" )) {
-      this._super("close");
-    }
-  }
+$.widget( "ui.dialog", $.ui.dialog, {
+	close: function() {
+		if ( confirm( "Is it closing time?" ) ) {
+			this._super();
+		}
+	}
 });</pre>
-            </section>
-        </div>
-        
-        <div class="slide">
-          <header>
-            <h1>I've got a <code>bridge</code> to sell you</h1>
-            </header>
-            <section class="text smallerCode">
-            <ul>
-              <li><a href="https://github.com/jquery/jquery-ui/blob/master/ui/jquery.ui.widget.js#L96"><code>$.widget.bridge</code></a> is the mechanism that actually creates the plugin</li>
-              <li>Set/change which widget prototype exists on <code>jQuery.fn</code></li>
-            </ul>
-            <pre class="brush: js; toolbar: false;">
+						</section>
+				</div>
+				
+				<div class="slide">
+					<header>
+						<h1>I've got a <code>bridge</code> to sell you</h1>
+						</header>
+						<section class="text smallerCode">
+						<ul>
+							<li><a href="https://github.com/jquery/jquery-ui/blob/master/ui/jquery.ui.widget.js#L96"><code>$.widget.bridge</code></a> is the mechanism that actually creates the plugin</li>
+							<li>Set/change which widget prototype exists on <code>jQuery.fn</code></li>
+						</ul>
+						<pre class="brush: js; toolbar: false;">
 // Create a brand new dialog widget from scratch
-$.widget("my.awesomeDialog", {/* snip */});
+$.widget( "my.awesomeDialog", {/* snip */});
 
 // Use the bridge to assign it to jQuery.fn.dialog
-$.widget.bridge("dialog", $.my.awesomeDialog);
+$.widget.bridge( "dialog", $.my.awesomeDialog );
 </pre>
-            </section>
-        </div>
-        
-        <div class="slide">
-          <header>
-            <h1>U and I can be friends</h1>
-          </header>
-            <section class="text smallerCode">
-            <h2>But not roommates</h2>
-            <ul>
-              <li>The <code>ui</code> namespace is reserved for official jQuery UI plugins</li>
-              <li>Just because you're using the widget factory doesn't mean you have to use <code>ui</code></li>
-              <li>We'd kinda prefer if you didn't :)</li>
-            </ul>
-            </section>
-        </div>
+						</section>
+				</div>
+				
+				<div class="slide">
+					<header>
+						<h1>U and I can be friends</h1>
+					</header>
+						<section class="text smallerCode">
+						<h2>But not roommates</h2>
+						<ul>
+							<li>The <code>ui</code> namespace is reserved for official jQuery UI plugins</li>
+							<li>Just because you're using the widget factory doesn't mean you have to use <code>ui</code></li>
+							<li>We'd kinda prefer if you didn't :)</li>
+						</ul>
+						</section>
+				</div>
 
-        <div class="slide">
-          <header>
-            <h1>More Resources</h1>
-          </header>
-          <section class="text">
+				<div class="slide">
+					<header>
+						<h1>More Resources</h1>
+					</header>
+					<section class="text">
 			<ul>
-				<li><a href="http://docs.jquery.com/UI_Developer_Guide#The_widget_factory">Developer's Guide</a></li>
-				<li><a href="http://wiki.jqueryui.com/w/page/12137970/jQuery-UI-CSS-Framework">jQuery UI CSS Framework</a></li>
+				<li><a href="http://learn.jquery.com/jquery-ui/widget-factory/">Learning Center: Widget Factory</a></li>
+				<li><a href="http://learn.jquery.com/jquery-ui/theming/api/">jQuery UI CSS Framework</a></li>
 				<li><a href="http://www.erichynds.com/jquery/tips-for-developing-jquery-ui-widgets/">Tips for Developing UI Widgets</a></li>
 				<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/coding-your-first-jquery-ui-plugin/">Coding Your First jQuery UI Plugin</a></li>
 				<li><a href="http://wiki.jqueryui.com/">jQuery UI Planning Wiki</a></li>
 				<li><a href="http://github.com/ajpiano.com/widgetfactory">These slides and our filterable plugin on GitHub</a></li>
 			</ul>
-          </section>
-        </div>
+					</section>
+				</div>
 
 		<div class="slide">
-          <header>
-            <h1>No problem, enjoy</h1>
-          </header>
-          <section class="text">
-          <ul>
-            <li><strong>adam j. sontag</strong></li>
-            <li>ajpiano at ajpiano dot com</li>
-            <li><a href="http://twitter.com/ajpiano">@ajpiano</a></li>
-            <li>I'm ajpiano on freenode IRC (#jquery) and everywhere</li>
-            <li><a href="http://ajpiano.com/">my blog</a></li>
-            <li><a href="http://yayquery.com/">yayQuery</a></li>
-          </ul>
-          </section>
-        </div>
+					<header>
+						<h1>No problem, enjoy</h1>
+					</header>
+					<section class="text">
+					<ul>
+						<li><strong>adam j. sontag</strong></li>
+						<li>ajpiano at ajpiano dot com</li>
+						<li><a href="http://twitter.com/ajpiano">@ajpiano</a></li>
+						<li>I'm ajpiano on freenode IRC (#jquery) and everywhere</li>
+						<li><a href="http://ajpiano.com/">my blog</a></li>
+						<li><a href="http://yayquery.com/">yayQuery</a></li>
+					</ul>
+					</section>
+		</div>
+		<div class="slide">
+					<header>
+						<h1>Revisionist History</h1>
+					</header>
+					<section class="text">
+					<ul>
+						<li><strong>corey frang</strong></li>
+						<li>gnarf37 at gmail dot com</li>
+						<li><a href="http://twitter.com/gnarf37">@gnarf37</a></li>
+						<li>I'm gnarf on freenode IRC (#jquery) and everywhere</li>
+						<li><a href="http://gnarf.net/">my blog</a></li>
+					</ul>
+					</section>
+		</div>
 	
 
 
 	
-      </div>
+			</div>
 
-      <!-- slides -->
+			<!-- slides -->
 
-    </div> <!-- presentation -->
+		</div> <!-- presentation -->
 
-    <script>
-      (function() {
-        var doc = document;
-        var disableBuilds = true;
+		<script>
+			(function() {
+				var doc = document;
+				var disableBuilds = true;
 
-        var ctr = 0;
-        var spaces = /\s+/, a1 = [''];
+				var ctr = 0;
+				var spaces = /\s+/, a1 = [''];
 
-        var toArray = function(list) {
-          return Array.prototype.slice.call(list || [], 0);
-        };
+				var toArray = function(list) {
+					return Array.prototype.slice.call(list || [], 0);
+				};
 
-        var byId = function(id) {
-          if (typeof id == 'string') { return doc.getElementById(id); }
-          return id;
-        };
+				var byId = function(id) {
+					if (typeof id == 'string') { return doc.getElementById(id); }
+					return id;
+				};
 
-        var query = function(query, root) {
-          if (!query) { return []; }
-          if (typeof query != 'string') { return toArray(query); }
-          if (typeof root == 'string') {
-            root = byId(root);
-            if(!root){ return []; }
-          }
+				var query = function(query, root) {
+					if (!query) { return []; }
+					if (typeof query != 'string') { return toArray(query); }
+					if (typeof root == 'string') {
+						root = byId(root);
+						if(!root){ return []; }
+					}
 
-          root = root || document;
-          var rootIsDoc = (root.nodeType == 9);
-          var doc = rootIsDoc ? root : (root.ownerDocument || document);
+					root = root || document;
+					var rootIsDoc = (root.nodeType == 9);
+					var doc = rootIsDoc ? root : (root.ownerDocument || document);
 
-          // rewrite the query to be ID rooted
-          if (!rootIsDoc || ('>~+'.indexOf(query.charAt(0)) >= 0)) {
-            root.id = root.id || ('qUnique' + (ctr++));
-            query = '#' + root.id + ' ' + query;
-          }
-          // don't choke on something like ".yada.yada >"
-          if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
+					// rewrite the query to be ID rooted
+					if (!rootIsDoc || ('>~+'.indexOf(query.charAt(0)) >= 0)) {
+						root.id = root.id || ('qUnique' + (ctr++));
+						query = '#' + root.id + ' ' + query;
+					}
+					// don't choke on something like ".yada.yada >"
+					if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
 
-          return toArray(doc.querySelectorAll(query));
-        };
+					return toArray(doc.querySelectorAll(query));
+				};
 
-        var strToArray = function(s) {
-          if (typeof s == 'string' || s instanceof String) {
-            if (s.indexOf(' ') < 0) {
-              a1[0] = s;
-              return a1;
-            } else {
-              return s.split(spaces);
-            }
-          }
-          return s;
-        };
+				var strToArray = function(s) {
+					if (typeof s == 'string' || s instanceof String) {
+						if (s.indexOf(' ') < 0) {
+							a1[0] = s;
+							return a1;
+						} else {
+							return s.split(spaces);
+						}
+					}
+					return s;
+				};
 
-        var addClass = function(node, classStr) {
-          classStr = strToArray(classStr);
-          var cls = ' ' + node.className + ' ';
-          for (var i = 0, len = classStr.length, c; i < len; ++i) {
-            c = classStr[i];
-            if (c && cls.indexOf(' ' + c + ' ') < 0) {
-              cls += c + ' ';
-            }
-          }
-          node.className = cls.trim();
-        };
+				var addClass = function(node, classStr) {
+					classStr = strToArray(classStr);
+					var cls = ' ' + node.className + ' ';
+					for (var i = 0, len = classStr.length, c; i < len; ++i) {
+						c = classStr[i];
+						if (c && cls.indexOf(' ' + c + ' ') < 0) {
+							cls += c + ' ';
+						}
+					}
+					node.className = cls.trim();
+				};
 
-        var removeClass = function(node, classStr) {
-          var cls;
-          if (classStr !== undefined) {
-            classStr = strToArray(classStr);
-            cls = ' ' + node.className + ' ';
-            for (var i = 0, len = classStr.length; i < len; ++i) {
-              cls = cls.replace(' ' + classStr[i] + ' ', ' ');
-            }
-            cls = cls.trim();
-          } else {
-            cls = '';
-          }
-          if (node.className != cls) {
-            node.className = cls;
-          }
-        };
+				var removeClass = function(node, classStr) {
+					var cls;
+					if (classStr !== undefined) {
+						classStr = strToArray(classStr);
+						cls = ' ' + node.className + ' ';
+						for (var i = 0, len = classStr.length; i < len; ++i) {
+							cls = cls.replace(' ' + classStr[i] + ' ', ' ');
+						}
+						cls = cls.trim();
+					} else {
+						cls = '';
+					}
+					if (node.className != cls) {
+						node.className = cls;
+					}
+				};
 
-        var toggleClass = function(node, classStr) {
-          var cls = ' ' + node.className + ' ';
-          if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
-            removeClass(node, classStr);
-          } else {
-            addClass(node, classStr);
-          }
-        };
+				var toggleClass = function(node, classStr) {
+					var cls = ' ' + node.className + ' ';
+					if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
+						removeClass(node, classStr);
+					} else {
+						addClass(node, classStr);
+					}
+				};
 
-        var ua = navigator.userAgent;
-        var isFF = parseFloat(ua.split('Firefox/')[1]) || undefined;
-        var isWK = parseFloat(ua.split('WebKit/')[1]) || undefined;
-        var isOpera = parseFloat(ua.split('Opera/')[1]) || undefined;
+				var ua = navigator.userAgent;
+				var isFF = parseFloat(ua.split('Firefox/')[1]) || undefined;
+				var isWK = parseFloat(ua.split('WebKit/')[1]) || undefined;
+				var isOpera = parseFloat(ua.split('Opera/')[1]) || undefined;
 
-        var canTransition = (function() {
-          var ver = parseFloat(ua.split('Version/')[1]) || undefined;
-          // test to determine if this browser can handle CSS transitions.
-          var cachedCanTransition =
-            (isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
-          return function() { return cachedCanTransition; }
-        })();
+				var canTransition = (function() {
+					var ver = parseFloat(ua.split('Version/')[1]) || undefined;
+					// test to determine if this browser can handle CSS transitions.
+					var cachedCanTransition =
+						(isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
+					return function() { return cachedCanTransition; }
+				})();
 
-        //
-        // Slide class
-        //
-        var Slide = function(node, idx) {
-          this._node = node;
-          if (idx >= 0) {
-            this._count = idx + 1;
-          }
-          if (this._node) {
-            addClass(this._node, 'slide distant-slide');
-          }
-          this._makeCounter();
-          this._makeBuildList();
-        };
+				//
+				// Slide class
+				//
+				var Slide = function(node, idx) {
+					this._node = node;
+					if (idx >= 0) {
+						this._count = idx + 1;
+					}
+					if (this._node) {
+						addClass(this._node, 'slide distant-slide');
+					}
+					this._makeCounter();
+					this._makeBuildList();
+				};
 
-        Slide.prototype = {
-          _node: null,
-          _count: 0,
-          _buildList: [],
-          _visited: false,
-          _currentState: '',
-          _states: [ 'distant-slide', 'far-past',
-                     'past', 'current', 'future',
-                     'far-future', 'distant-slide' ],
-          setState: function(state) {
-            if (typeof state != 'string') {
-              state = this._states[state];
-            }
-            if (state == 'current' && !this._visited) {
-              this._visited = true;
-              this._makeBuildList();
-            }
-            removeClass(this._node, this._states);
-            addClass(this._node, state);
-            this._currentState = state;
+				Slide.prototype = {
+					_node: null,
+					_count: 0,
+					_buildList: [],
+					_visited: false,
+					_currentState: '',
+					_states: [ 'distant-slide', 'far-past',
+										 'past', 'current', 'future',
+										 'far-future', 'distant-slide' ],
+					setState: function(state) {
+						if (typeof state != 'string') {
+							state = this._states[state];
+						}
+						if (state == 'current' && !this._visited) {
+							this._visited = true;
+							this._makeBuildList();
+						}
+						removeClass(this._node, this._states);
+						addClass(this._node, state);
+						this._currentState = state;
 
-            // delay first auto run. Really wish this were in CSS.
-            /*
-            this._runAutos();
-            */
-            var _t = this;
-            setTimeout(function(){ _t._runAutos(); } , 400);
-          },
-          _makeCounter: function() {
-            if(!this._count || !this._node) { return; }
-            var c = doc.createElement('span');
-            c.innerHTML = this._count;
-            c.className = 'counter';
-            this._node.appendChild(c);
-          },
-          _makeBuildList: function() {
-            this._buildList = [];
-            if (disableBuilds) { return; }
-            if (this._node) {
-              this._buildList = query('[data-build] > *', this._node);
-            }
-            this._buildList.forEach(function(el) {
-              addClass(el, 'to-build');
-            });
-          },
-          _runAutos: function() {
-            if (this._currentState != 'current') {
-              return;
-            }
-            // find the next auto, slice it out of the list, and run it
-            var idx = -1;
-            this._buildList.some(function(n, i) {
-              if (n.hasAttribute('data-auto')) {
-                idx = i;
-                return true;
-              }
-              return false;
-            });
-            if (idx >= 0) {
-              var elem = this._buildList.splice(idx, 1)[0];
-              var transitionEnd = isWK ? 'webkitTransitionEnd' : (isFF ? 'mozTransitionEnd' : 'oTransitionEnd');
-              var _t = this;
-              if (canTransition()) {
-                var l = function(evt) {
-                  elem.parentNode.removeEventListener(transitionEnd, l, false);
-                  _t._runAutos();
-                };
-                elem.parentNode.addEventListener(transitionEnd, l, false);
-                removeClass(elem, 'to-build');
-              } else {
-                setTimeout(function() {
-                  removeClass(elem, 'to-build');
-                  _t._runAutos();
-                }, 400);
-              }
-            }
-          },
-          buildNext: function() {
-            if (!this._buildList.length) {
-              return false;
-            }
-            removeClass(this._buildList.shift(), 'to-build');
-            return true;
-          },
-        };
+						// delay first auto run. Really wish this were in CSS.
+						/*
+						this._runAutos();
+						*/
+						var _t = this;
+						setTimeout(function(){ _t._runAutos(); } , 400);
+					},
+					_makeCounter: function() {
+						if(!this._count || !this._node) { return; }
+						var c = doc.createElement('span');
+						c.innerHTML = this._count;
+						c.className = 'counter';
+						this._node.appendChild(c);
+					},
+					_makeBuildList: function() {
+						this._buildList = [];
+						if (disableBuilds) { return; }
+						if (this._node) {
+							this._buildList = query('[data-build] > *', this._node);
+						}
+						this._buildList.forEach(function(el) {
+							addClass(el, 'to-build');
+						});
+					},
+					_runAutos: function() {
+						if (this._currentState != 'current') {
+							return;
+						}
+						// find the next auto, slice it out of the list, and run it
+						var idx = -1;
+						this._buildList.some(function(n, i) {
+							if (n.hasAttribute('data-auto')) {
+								idx = i;
+								return true;
+							}
+							return false;
+						});
+						if (idx >= 0) {
+							var elem = this._buildList.splice(idx, 1)[0];
+							var transitionEnd = isWK ? 'webkitTransitionEnd' : (isFF ? 'mozTransitionEnd' : 'oTransitionEnd');
+							var _t = this;
+							if (canTransition()) {
+								var l = function(evt) {
+									elem.parentNode.removeEventListener(transitionEnd, l, false);
+									_t._runAutos();
+								};
+								elem.parentNode.addEventListener(transitionEnd, l, false);
+								removeClass(elem, 'to-build');
+							} else {
+								setTimeout(function() {
+									removeClass(elem, 'to-build');
+									_t._runAutos();
+								}, 400);
+							}
+						}
+					},
+					buildNext: function() {
+						if (!this._buildList.length) {
+							return false;
+						}
+						removeClass(this._buildList.shift(), 'to-build');
+						return true;
+					},
+				};
 
-        //
-        // SlideShow class
-        //
-        var SlideShow = function(slides) {
-          this._slides = (slides || []).map(function(el, idx) {
-            return new Slide(el, idx);
-          });
-          var h = window.location.hash;
-          try {
-            this.current = parseInt(h.split('#slide')[1], 10);
-          } catch (e) { /* squeltch */ }
-          this.current = isNaN(this.current) ? 1 : this.current;
-          var _t = this;
-          doc.addEventListener('keydown',
-              function(e) { _t.handleKeys(e); }, false);
-          doc.addEventListener('mousewheel',
-              function(e) { _t.handleWheel(e); }, false);
-          doc.addEventListener('DOMMouseScroll',
-              function(e) { _t.handleWheel(e); }, false);
-          doc.addEventListener('touchstart',
-              function(e) { _t.handleTouchStart(e); }, false);
-          doc.addEventListener('touchend',
-              function(e) { _t.handleTouchEnd(e); }, false);
-          window.addEventListener('popstate',
-              function(e) { if (e.state) { _t.go(e.state); } }, false);
-          this._update();
-        };
+				//
+				// SlideShow class
+				//
+				var SlideShow = function(slides) {
+					this._slides = (slides || []).map(function(el, idx) {
+						return new Slide(el, idx);
+					});
+					var h = window.location.hash;
+					try {
+						this.current = parseInt(h.split('#slide')[1], 10);
+					} catch (e) { /* squeltch */ }
+					this.current = isNaN(this.current) ? 1 : this.current;
+					var _t = this;
+					doc.addEventListener('keydown',
+							function(e) { _t.handleKeys(e); }, false);
+					doc.addEventListener('mousewheel',
+							function(e) { _t.handleWheel(e); }, false);
+					doc.addEventListener('DOMMouseScroll',
+							function(e) { _t.handleWheel(e); }, false);
+					doc.addEventListener('touchstart',
+							function(e) { _t.handleTouchStart(e); }, false);
+					doc.addEventListener('touchend',
+							function(e) { _t.handleTouchEnd(e); }, false);
+					window.addEventListener('popstate',
+							function(e) { if (e.state) { _t.go(e.state); } }, false);
+					this._update();
+				};
 
-        SlideShow.prototype = {
-          _slides: [],
-          _update: function(dontPush) {
-            document.querySelector('#presentation-counter').innerText = this.current;
-            if (history.pushState) {
-              if (!dontPush) {
-                history.replaceState(this.current, 'Slide ' + this.current, '#slide' + this.current);
-              }
-            } else {
-              window.location.hash = 'slide' + this.current;
-            }
-            for (var x = this.current-1; x < this.current + 7; x++) {
-              if (this._slides[x-4]) {
-                this._slides[x-4].setState(Math.max(0, x-this.current));
-              }
-            }
-          },
+				SlideShow.prototype = {
+					_slides: [],
+					_update: function(dontPush) {
+						document.querySelector('#presentation-counter').innerText = this.current;
+						if (history.pushState) {
+							if (!dontPush) {
+								history.replaceState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+							}
+						} else {
+							window.location.hash = 'slide' + this.current;
+						}
+						for (var x = this.current-1; x < this.current + 7; x++) {
+							if (this._slides[x-4]) {
+								this._slides[x-4].setState(Math.max(0, x-this.current));
+							}
+						}
+					},
 
-          current: 0,
-          next: function() {
-            if (!this._slides[this.current-1].buildNext()) {
-              this.current = Math.min(this.current + 1, this._slides.length);
-              this._update();
-            }
-          },
-          prev: function() {
-            this.current = Math.max(this.current-1, 1);
-            this._update();
-          },
-          go: function(num) {
-            this.current = num;
-            this._update(true);
-          },
+					current: 0,
+					next: function() {
+						if (!this._slides[this.current-1].buildNext()) {
+							this.current = Math.min(this.current + 1, this._slides.length);
+							this._update();
+						}
+					},
+					prev: function() {
+						this.current = Math.max(this.current-1, 1);
+						this._update();
+					},
+					go: function(num) {
+						this.current = num;
+						this._update(true);
+					},
 
-          _notesOn: false,
-          showNotes: function() {
-            var isOn = this._notesOn = !this._notesOn;
-            query('.notes').forEach(function(el) {
-              el.style.display = (notesOn) ? 'block' : 'none';
-            });
-          },
-          switch3D: function() {
-            toggleClass(document.body, 'three-d');
-          },
-          handleWheel: function(e) {
-            var delta = 0;
-            if (e.wheelDelta) {
-              delta = e.wheelDelta/120;
-              if (isOpera) {
-                delta = -delta;
-              }
-            } else if (e.detail) {
-              delta = -e.detail/3;
-            }
+					_notesOn: false,
+					showNotes: function() {
+						var isOn = this._notesOn = !this._notesOn;
+						query('.notes').forEach(function(el) {
+							el.style.display = (notesOn) ? 'block' : 'none';
+						});
+					},
+					switch3D: function() {
+						toggleClass(document.body, 'three-d');
+					},
+					handleWheel: function(e) {
+						var delta = 0;
+						if (e.wheelDelta) {
+							delta = e.wheelDelta/120;
+							if (isOpera) {
+								delta = -delta;
+							}
+						} else if (e.detail) {
+							delta = -e.detail/3;
+						}
 
-            if (delta > 0 ) {
-              this.prev();
-              return;
-            }
-            if (delta < 0 ) {
-              this.next();
-              return;
-            }
-          },
-          handleKeys: function(e) {
+						if (delta > 0 ) {
+							this.prev();
+							return;
+						}
+						if (delta < 0 ) {
+							this.next();
+							return;
+						}
+					},
+					handleKeys: function(e) {
 
-            if (/^(input|textarea)$/i.test(e.target.nodeName)) return;
+						if (/^(input|textarea)$/i.test(e.target.nodeName)) return;
 
-            switch (e.keyCode) {
-              case 37: // left arrow
-                this.prev(); break;
-              case 39: // right arrow
-              case 32: // space
-                this.next(); break;
-              case 50: // 2
-                this.showNotes(); break;
-              case 51: // 3
-                this.switch3D(); break;
-            }
-          },
-          _touchStartX: 0,
-          handleTouchStart: function(e) {
-            this._touchStartX = e.touches[0].pageX;
-          },
-          handleTouchEnd: function(e) {
-            var delta = this._touchStartX - e.changedTouches[0].pageX;
-            var SWIPE_SIZE = 150;
-            if (delta > SWIPE_SIZE) {
-              this.next();
-            } else if (delta< -SWIPE_SIZE) {
-              this.prev();
-            }
-          },
-        };
+						switch (e.keyCode) {
+							case 37: // left arrow
+								this.prev(); break;
+							case 39: // right arrow
+							case 32: // space
+								this.next(); break;
+							case 50: // 2
+								this.showNotes(); break;
+							case 51: // 3
+								this.switch3D(); break;
+						}
+					},
+					_touchStartX: 0,
+					handleTouchStart: function(e) {
+						this._touchStartX = e.touches[0].pageX;
+					},
+					handleTouchEnd: function(e) {
+						var delta = this._touchStartX - e.changedTouches[0].pageX;
+						var SWIPE_SIZE = 150;
+						if (delta > SWIPE_SIZE) {
+							this.next();
+						} else if (delta< -SWIPE_SIZE) {
+							this.prev();
+						}
+					},
+				};
 
-        // Initialize
-        var slideshow = new SlideShow(query('.slide'));
-      })();
-    </script>
+				// Initialize
+				var slideshow = new SlideShow(query('.slide'));
+			})();
+		</script>
 
-    <!--[if lt IE 9]>
-    <script
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
-    </script>
+		<!--[if lt IE 9]>
+		<script
+			src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
+		</script>
 		<script>CFInstall.check({ mode: "overlay" });</script>
-    <![endif]-->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-    <script>
+		<![endif]-->
+<script src="js/jquery-1.9.0.js"></script>
+		<script>
 /*
 
  Syntax Highlighter: Dual licensed under the MIT and GPL licenses.
@@ -1050,8 +1043,8 @@ a.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"|");return"\\b(?:"+a+")\\b"},forHtmlS
 css:"keyword"}];this.forHtmlScript(m.scriptScriptTags)}typeof require!="undefined"&&(SyntaxHighlighter=require("shCore").SyntaxHighlighter);j.prototype=new SyntaxHighlighter.Highlighter;j.aliases=["js","jscript","javascript"];SyntaxHighlighter.brushes.JScript=j;typeof exports!="undefined"&&(exports.Brush=j)})();
 (function(){function j(){this.regexList=[{regex:new XRegExp("(\\&lt;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|>)","gm"),css:"color2"},{regex:SyntaxHighlighter.regexLib.xmlComments,css:"comments"},{regex:new XRegExp("(&lt;|<)[\\s\\/\\?]*(\\w+)(?<attributes>.*?)[\\s\\/\\?]*(&gt;|>)","sg"),func:function(m){var p=SyntaxHighlighter.Match,n=m[0],r=(new XRegExp("(&lt;|<)[\\s\\/\\?]*(?<name>[:\\w-\\.]+)","xg")).exec(n),t=[];if(m.attributes!=null)for(var u,w=new XRegExp("(?<name> [\\w:\\-\\.]+)\\s*=\\s*(?<value> \".*?\"|'.*?'|\\w+)",
 "xg");(u=w.exec(n))!=null;){t.push(new p(u.name,m.index+u.index,"color1"));t.push(new p(u.value,m.index+u.index+u[0].indexOf(u.value),"string"))}r!=null&&t.push(new p(r.name,m.index+r[0].indexOf(r.name),"keyword"));return t}}]}typeof require!="undefined"&&(SyntaxHighlighter=require("shCore").SyntaxHighlighter);j.prototype=new SyntaxHighlighter.Highlighter;j.aliases=["xml","xhtml","xslt","html"];SyntaxHighlighter.brushes.Xml=j;typeof exports!="undefined"&&(exports.Brush=j)})();
-    </script>
-    <script type='text/javascript'>
+		</script>
+		<script type='text/javascript'>
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
@@ -1070,207 +1063,108 @@ css:"keyword"}];this.forHtmlScript(m.scriptScriptTags)}typeof require!="undefine
 	SyntaxHighlighter.all();
 
 
-        /**
-        * hoverIntent r5 // 2007.03.27 // jQuery 1.1.2+
-        * <http://cherne.net/brian/resources/jquery.hoverIntent.html>
-        *
-        * @param  f  onMouseOver function || An object with configuration options
-        * @param  g  onMouseOut function  || Nothing (use configuration options object)
-        * @author    Brian Cherne <brian@cherne.net>
-        */
-        (function($){$.fn.hoverIntent=function(f,g){var cfg={sensitivity:7,interval:100,timeout:0};cfg=$.extend(cfg,g?{over:f,out:g}:f);var cX,cY,pX,pY;var track=function(ev){cX=ev.pageX;cY=ev.pageY;};var compare=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);if((Math.abs(pX-cX)+Math.abs(pY-cY))<cfg.sensitivity){$(ob).unbind("mousemove",track);ob.hoverIntent_s=1;return cfg.over.apply(ob,[ev]);}else{pX=cX;pY=cY;ob.hoverIntent_t=setTimeout(function(){compare(ev,ob);},cfg.interval);}};var delay=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);ob.hoverIntent_s=0;return cfg.out.apply(ob,[ev]);};var handleHover=function(e){var p=(e.type=="mouseover"?e.fromElement:e.toElement)||e.relatedTarget;while(p&&p!=this){try{p=p.parentNode;}catch(e){p=this;}}if(p==this){return false;}var ev=jQuery.extend({},e);var ob=this;if(ob.hoverIntent_t){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);}if(e.type=="mouseover"){pX=ev.pageX;pY=ev.pageY;$(ob).bind("mousemove",track);if(ob.hoverIntent_s!=1){ob.hoverIntent_t=setTimeout(function(){compare(ev,ob);},cfg.interval);}}else{$(ob).unbind("mousemove",track);if(ob.hoverIntent_s==1){ob.hoverIntent_t=setTimeout(function(){delay(ev,ob);},cfg.timeout);}}};return this.mouseover(handleHover).mouseout(handleHover);};})(jQuery);
+				/**
+				* hoverIntent r5 // 2007.03.27 // jQuery 1.1.2+
+				* <http://cherne.net/brian/resources/jquery.hoverIntent.html>
+				*
+				* @param  f  onMouseOver function || An object with configuration options
+				* @param  g  onMouseOut function  || Nothing (use configuration options object)
+				* @author    Brian Cherne <brian@cherne.net>
+				*/
+				(function($){$.fn.hoverIntent=function(f,g){var cfg={sensitivity:7,interval:100,timeout:0};cfg=$.extend(cfg,g?{over:f,out:g}:f);var cX,cY,pX,pY;var track=function(ev){cX=ev.pageX;cY=ev.pageY;};var compare=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);if((Math.abs(pX-cX)+Math.abs(pY-cY))<cfg.sensitivity){$(ob).unbind("mousemove",track);ob.hoverIntent_s=1;return cfg.over.apply(ob,[ev]);}else{pX=cX;pY=cY;ob.hoverIntent_t=setTimeout(function(){compare(ev,ob);},cfg.interval);}};var delay=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);ob.hoverIntent_s=0;return cfg.out.apply(ob,[ev]);};var handleHover=function(e){var p=(e.type=="mouseover"?e.fromElement:e.toElement)||e.relatedTarget;while(p&&p!=this){try{p=p.parentNode;}catch(e){p=this;}}if(p==this){return false;}var ev=jQuery.extend({},e);var ob=this;if(ob.hoverIntent_t){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);}if(e.type=="mouseover"){pX=ev.pageX;pY=ev.pageY;$(ob).bind("mousemove",track);if(ob.hoverIntent_s!=1){ob.hoverIntent_t=setTimeout(function(){compare(ev,ob);},cfg.interval);}}else{$(ob).unbind("mousemove",track);if(ob.hoverIntent_s==1){ob.hoverIntent_t=setTimeout(function(){delay(ev,ob);},cfg.timeout);}}};return this.mouseover(handleHover).mouseout(handleHover);};})(jQuery);
 
-        jQuery.cookie=function(b,j,m){if(typeof j!="undefined"){m=m||{};if(j===null){j="";m.expires=-1}var e="";if(m.expires&&(typeof m.expires=="number"||m.expires.toUTCString)){var f;if(typeof m.expires=="number"){f=new Date();f.setTime(f.getTime()+(m.expires*24*60*60*1000))}else{f=m.expires}e="; expires="+f.toUTCString()}var l=m.path?"; path="+(m.path):"";var g=m.domain?"; domain="+(m.domain):"";var a=m.secure?"; secure":"";document.cookie=[b,"=",encodeURIComponent(j),e,l,g,a].join("")}else{var d=null;if(document.cookie&&document.cookie!=""){var k=document.cookie.split(";");for(var h=0;h<k.length;h++){var c=jQuery.trim(k[h]);if(c.substring(0,b.length+1)==(b+"=")){d=decodeURIComponent(c.substring(b.length+1));break}}}return d}};
+				jQuery.cookie=function(b,j,m){if(typeof j!="undefined"){m=m||{};if(j===null){j="";m.expires=-1}var e="";if(m.expires&&(typeof m.expires=="number"||m.expires.toUTCString)){var f;if(typeof m.expires=="number"){f=new Date();f.setTime(f.getTime()+(m.expires*24*60*60*1000))}else{f=m.expires}e="; expires="+f.toUTCString()}var l=m.path?"; path="+(m.path):"";var g=m.domain?"; domain="+(m.domain):"";var a=m.secure?"; secure":"";document.cookie=[b,"=",encodeURIComponent(j),e,l,g,a].join("")}else{var d=null;if(document.cookie&&document.cookie!=""){var k=document.cookie.split(";");for(var h=0;h<k.length;h++){var c=jQuery.trim(k[h]);if(c.substring(0,b.length+1)==(b+"=")){d=decodeURIComponent(c.substring(b.length+1));break}}}return d}};
 
-      /*!
-       * jQuery UI 1.8.6
-       *
-       * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
-       * Dual licensed under the MIT or GPL Version 2 licenses.
-       * http://jquery.org/license
-       *
-       * http://docs.jquery.com/UI
-       */
-      (function(a,c){a.ui=a.ui||{};if(a.ui.version){return}a.extend(a.ui,{version:"1.8.6",keyCode:{ALT:18,BACKSPACE:8,CAPS_LOCK:20,COMMA:188,COMMAND:91,COMMAND_LEFT:91,COMMAND_RIGHT:93,CONTROL:17,DELETE:46,DOWN:40,END:35,ENTER:13,ESCAPE:27,HOME:36,INSERT:45,LEFT:37,MENU:93,NUMPAD_ADD:107,NUMPAD_DECIMAL:110,NUMPAD_DIVIDE:111,NUMPAD_ENTER:108,NUMPAD_MULTIPLY:106,NUMPAD_SUBTRACT:109,PAGE_DOWN:34,PAGE_UP:33,PERIOD:190,RIGHT:39,SHIFT:16,SPACE:32,TAB:9,UP:38,WINDOWS:91}});a.fn.extend({_focus:a.fn.focus,focus:function(d,e){return typeof d==="number"?this.each(function(){var f=this;setTimeout(function(){a(f).focus();if(e){e.call(f)}},d)}):this._focus.apply(this,arguments)},scrollParent:function(){var d;if((a.browser.msie&&(/(static|relative)/).test(this.css("position")))||(/absolute/).test(this.css("position"))){d=this.parents().filter(function(){return(/(relative|absolute|fixed)/).test(a.curCSS(this,"position",1))&&(/(auto|scroll)/).test(a.curCSS(this,"overflow",1)+a.curCSS(this,"overflow-y",1)+a.curCSS(this,"overflow-x",1))}).eq(0)}else{d=this.parents().filter(function(){return(/(auto|scroll)/).test(a.curCSS(this,"overflow",1)+a.curCSS(this,"overflow-y",1)+a.curCSS(this,"overflow-x",1))}).eq(0)}return(/fixed/).test(this.css("position"))||!d.length?a(document):d},zIndex:function(g){if(g!==c){return this.css("zIndex",g)}if(this.length){var e=a(this[0]),d,f;while(e.length&&e[0]!==document){d=e.css("position");if(d==="absolute"||d==="relative"||d==="fixed"){f=parseInt(e.css("zIndex"),10);if(!isNaN(f)&&f!==0){return f}}e=e.parent()}}return 0},disableSelection:function(){return this.bind((a.support.selectstart?"selectstart":"mousedown")+".ui-disableSelection",function(d){d.preventDefault()})},enableSelection:function(){return this.unbind(".ui-disableSelection")}});a.each(["Width","Height"],function(f,d){var e=d==="Width"?["Left","Right"]:["Top","Bottom"],g=d.toLowerCase(),j={innerWidth:a.fn.innerWidth,innerHeight:a.fn.innerHeight,outerWidth:a.fn.outerWidth,outerHeight:a.fn.outerHeight};function h(l,k,i,m){a.each(e,function(){k-=parseFloat(a.curCSS(l,"padding"+this,true))||0;if(i){k-=parseFloat(a.curCSS(l,"border"+this+"Width",true))||0}if(m){k-=parseFloat(a.curCSS(l,"margin"+this,true))||0}});return k}a.fn["inner"+d]=function(i){if(i===c){return j["inner"+d].call(this)}return this.each(function(){a(this).css(g,h(this,i)+"px")})};a.fn["outer"+d]=function(i,k){if(typeof i!=="number"){return j["outer"+d].call(this,i)}return this.each(function(){a(this).css(g,h(this,i,true,k)+"px")})}});function b(d){return !a(d).parents().andSelf().filter(function(){return a.curCSS(this,"visibility")==="hidden"||a.expr.filters.hidden(this)}).length}a.extend(a.expr[":"],{data:function(f,e,d){return !!a.data(f,d[3])},focusable:function(f){var i=f.nodeName.toLowerCase(),d=a.attr(f,"tabindex");if("area"===i){var h=f.parentNode,g=h.name,e;if(!f.href||!g||h.nodeName.toLowerCase()!=="map"){return false}e=a("img[usemap=#"+g+"]")[0];return !!e&&b(e)}return(/input|select|textarea|button|object/.test(i)?!f.disabled:"a"==i?f.href||!isNaN(d):!isNaN(d))&&b(f)},tabbable:function(e){var d=a.attr(e,"tabindex");return(isNaN(d)||d>=0)&&a(e).is(":focusable")}});a(function(){var d=document.body,e=d.appendChild(e=document.createElement("div"));a.extend(e.style,{minHeight:"100px",height:"auto",padding:0,borderWidth:0});a.support.minHeight=e.offsetHeight===100;a.support.selectstart="onselectstart" in e;d.removeChild(e).style.display="none"});a.extend(a.ui,{plugin:{add:function(e,f,h){var g=a.ui[e].prototype;for(var d in h){g.plugins[d]=g.plugins[d]||[];g.plugins[d].push([f,h[d]])}},call:function(d,f,e){var h=d.plugins[f];if(!h||!d.element[0].parentNode){return}for(var g=0;g<h.length;g++){if(d.options[h[g][0]]){h[g][1].apply(d.element,e)}}}},contains:function(e,d){return document.compareDocumentPosition?e.compareDocumentPosition(d)&16:e!==d&&e.contains(d)},hasScroll:function(g,e){if(a(g).css("overflow")==="hidden"){return false}var d=(e&&e==="left")?"scrollLeft":"scrollTop",f=false;if(g[d]>0){return true}g[d]=1;f=(g[d]>0);g[d]=0;return f},isOverAxis:function(e,d,f){return(e>d)&&(e<(d+f))},isOver:function(i,e,h,g,d,f){return a.ui.isOverAxis(i,h,d)&&a.ui.isOverAxis(e,g,f)}})})(jQuery);
-      /*!
-       * jQuery UI Widget 1.8.6
-       *
-       * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
-       * Dual licensed under the MIT or GPL Version 2 licenses.
-       * http://jquery.org/license
-       *
-       * http://docs.jquery.com/UI/Widget
-       */
-      (function(b,d){if(b.cleanData){var c=b.cleanData;b.cleanData=function(e){for(var f=0,g;(g=e[f])!=null;f++){b(g).triggerHandler("remove")}c(e)}}else{var a=b.fn.remove;b.fn.remove=function(e,f){return this.each(function(){if(!f){if(!e||b.filter(e,[this]).length){b("*",this).add([this]).each(function(){b(this).triggerHandler("remove")})}}return a.call(b(this),e,f)})}}b.widget=function(f,h,e){var g=f.split(".")[0],j;f=f.split(".")[1];j=g+"-"+f;if(!e){e=h;h=b.Widget}b.expr[":"][j]=function(k){return !!b.data(k,f)};b[g]=b[g]||{};b[g][f]=function(k,l){if(arguments.length){this._createWidget(k,l)}};var i=new h();i.options=b.extend(true,{},i.options);b[g][f].prototype=b.extend(true,i,{namespace:g,widgetName:f,widgetEventPrefix:b[g][f].prototype.widgetEventPrefix||f,widgetBaseClass:j},e);b.widget.bridge(f,b[g][f])};b.widget.bridge=function(f,e){b.fn[f]=function(i){var g=typeof i==="string",h=Array.prototype.slice.call(arguments,1),j=this;i=!g&&h.length?b.extend.apply(null,[true,i].concat(h)):i;if(g&&i.charAt(0)==="_"){return j}if(g){this.each(function(){var k=b.data(this,f),l=k&&b.isFunction(k[i])?k[i].apply(k,h):k;if(l!==k&&l!==d){j=l;return false}})}else{this.each(function(){var k=b.data(this,f);if(k){k.option(i||{})._init()}else{b.data(this,f,new e(i,this))}})}return j}};b.Widget=function(e,f){if(arguments.length){this._createWidget(e,f)}};b.Widget.prototype={widgetName:"widget",widgetEventPrefix:"",options:{disabled:false},_createWidget:function(f,g){b.data(g,this.widgetName,this);this.element=b(g);this.options=b.extend(true,{},this.options,this._getCreateOptions(),f);var e=this;this.element.bind("remove."+this.widgetName,function(){e.destroy()});this._create();this._trigger("create");this._init()},_getCreateOptions:function(){return b.metadata&&b.metadata.get(this.element[0])[this.widgetName]},_create:function(){},_init:function(){},destroy:function(){this.element.unbind("."+this.widgetName).removeData(this.widgetName);this.widget().unbind("."+this.widgetName).removeAttr("aria-disabled").removeClass(this.widgetBaseClass+"-disabled ui-state-disabled")},widget:function(){return this.element},option:function(f,g){var e=f;if(arguments.length===0){return b.extend({},this.options)}if(typeof f==="string"){if(g===d){return this.options[f]}e={};e[f]=g}this._setOptions(e);return this},_setOptions:function(f){var e=this;b.each(f,function(g,h){e._setOption(g,h)});return this},_setOption:function(e,f){this.options[e]=f;if(e==="disabled"){this.widget()[f?"addClass":"removeClass"](this.widgetBaseClass+"-disabled ui-state-disabled").attr("aria-disabled",f)}return this},enable:function(){return this._setOption("disabled",false)},disable:function(){return this._setOption("disabled",true)},_trigger:function(f,g,h){var k=this.options[f];g=b.Event(g);g.type=(f===this.widgetEventPrefix?f:this.widgetEventPrefix+f).toLowerCase();h=h||{};if(g.originalEvent){for(var e=b.event.props.length,j;e;){j=b.event.props[--e];g[j]=g.originalEvent[j]}}this.element.trigger(g,h);return !(b.isFunction(k)&&k.call(this.element[0],g,h)===false||g.isDefaultPrevented())}}})(jQuery);(function(e,h){var c,b="ui-button ui-widget ui-state-default ui-corner-all",g="ui-state-hover ui-state-active ",f="ui-button-icons-only ui-button-icon-only ui-button-text-icons ui-button-text-icon-primary ui-button-text-icon-secondary ui-button-text-only",d=function(i){e(":ui-button",i.target.form).each(function(){var j=e(this).data("button");setTimeout(function(){j.refresh()},1)})},a=function(j){var i=j.name,k=j.form,l=e([]);if(i){if(k){l=e(k).find("[name='"+i+"']")}else{l=e("[name='"+i+"']",j.ownerDocument).filter(function(){return !this.form})}}return l};e.widget("ui.button",{options:{disabled:null,text:true,label:null,icons:{primary:null,secondary:null}},_create:function(){this.element.closest("form").unbind("reset.button").bind("reset.button",d);if(typeof this.options.disabled!=="boolean"){this.options.disabled=this.element.attr("disabled")}this._determineButtonType();this.hasTitle=!!this.buttonElement.attr("title");var i=this,k=this.options,l=this.type==="checkbox"||this.type==="radio",m="ui-state-hover"+(!l?" ui-state-active":""),j="ui-state-focus";if(k.label===null){k.label=this.buttonElement.html()}if(this.element.is(":disabled")){k.disabled=true}this.buttonElement.addClass(b).attr("role","button").bind("mouseenter.button",function(){if(k.disabled){return}e(this).addClass("ui-state-hover");if(this===c){e(this).addClass("ui-state-active")}}).bind("mouseleave.button",function(){if(k.disabled){return}e(this).removeClass(m)}).bind("focus.button",function(){e(this).addClass(j)}).bind("blur.button",function(){e(this).removeClass(j)});if(l){this.element.bind("change.button",function(){i.refresh()})}if(this.type==="checkbox"){this.buttonElement.bind("click.button",function(){if(k.disabled){return false}e(this).toggleClass("ui-state-active");i.buttonElement.attr("aria-pressed",i.element[0].checked)})}else{if(this.type==="radio"){this.buttonElement.bind("click.button",function(){if(k.disabled){return false}e(this).addClass("ui-state-active");i.buttonElement.attr("aria-pressed",true);var n=i.element[0];a(n).not(n).map(function(){return e(this).button("widget")[0]}).removeClass("ui-state-active").attr("aria-pressed",false)})}else{this.buttonElement.bind("mousedown.button",function(){if(k.disabled){return false}e(this).addClass("ui-state-active");c=this;e(document).one("mouseup",function(){c=null})}).bind("mouseup.button",function(){if(k.disabled){return false}e(this).removeClass("ui-state-active")}).bind("keydown.button",function(n){if(k.disabled){return false}if(n.keyCode==e.ui.keyCode.SPACE||n.keyCode==e.ui.keyCode.ENTER){e(this).addClass("ui-state-active")}}).bind("keyup.button",function(){e(this).removeClass("ui-state-active")});if(this.buttonElement.is("a")){this.buttonElement.keyup(function(n){if(n.keyCode===e.ui.keyCode.SPACE){e(this).click()}})}}}this._setOption("disabled",k.disabled)},_determineButtonType:function(){if(this.element.is(":checkbox")){this.type="checkbox"}else{if(this.element.is(":radio")){this.type="radio"}else{if(this.element.is("input")){this.type="input"}else{this.type="button"}}}if(this.type==="checkbox"||this.type==="radio"){this.buttonElement=this.element.parents().last().find("label[for="+this.element.attr("id")+"]");this.element.addClass("ui-helper-hidden-accessible");var i=this.element.is(":checked");if(i){this.buttonElement.addClass("ui-state-active")}this.buttonElement.attr("aria-pressed",i)}else{this.buttonElement=this.element}},widget:function(){return this.buttonElement},destroy:function(){this.element.removeClass("ui-helper-hidden-accessible");this.buttonElement.removeClass(b+" "+g+" "+f).removeAttr("role").removeAttr("aria-pressed").html(this.buttonElement.find(".ui-button-text").html());if(!this.hasTitle){this.buttonElement.removeAttr("title")}e.Widget.prototype.destroy.call(this)},_setOption:function(i,j){e.Widget.prototype._setOption.apply(this,arguments);if(i==="disabled"){if(j){this.element.attr("disabled",true)}else{this.element.removeAttr("disabled")}}this._resetButton()},refresh:function(){var i=this.element.is(":disabled");if(i!==this.options.disabled){this._setOption("disabled",i)}if(this.type==="radio"){a(this.element[0]).each(function(){if(e(this).is(":checked")){e(this).button("widget").addClass("ui-state-active").attr("aria-pressed",true)}else{e(this).button("widget").removeClass("ui-state-active").attr("aria-pressed",false)}})}else{if(this.type==="checkbox"){if(this.element.is(":checked")){this.buttonElement.addClass("ui-state-active").attr("aria-pressed",true)}else{this.buttonElement.removeClass("ui-state-active").attr("aria-pressed",false)}}}},_resetButton:function(){if(this.type==="input"){if(this.options.label){this.element.val(this.options.label)}return}var l=this.buttonElement.removeClass(f),k=e("<span></span>").addClass("ui-button-text").html(this.options.label).appendTo(l.empty()).text(),j=this.options.icons,i=j.primary&&j.secondary;if(j.primary||j.secondary){l.addClass("ui-button-text-icon"+(i?"s":(j.primary?"-primary":"-secondary")));if(j.primary){l.prepend("<span class='ui-button-icon-primary ui-icon "+j.primary+"'></span>")}if(j.secondary){l.append("<span class='ui-button-icon-secondary ui-icon "+j.secondary+"'></span>")}if(!this.options.text){l.addClass(i?"ui-button-icons-only":"ui-button-icon-only").removeClass("ui-button-text-icons ui-button-text-icon-primary ui-button-text-icon-secondary");if(!this.hasTitle){l.attr("title",k)}}}else{l.addClass("ui-button-text-only")}}});e.widget("ui.buttonset",{_create:function(){this.element.addClass("ui-buttonset")},_init:function(){this.refresh()},_setOption:function(i,j){if(i==="disabled"){this.buttons.button("option",i,j)}e.Widget.prototype._setOption.apply(this,arguments)},refresh:function(){this.buttons=this.element.find(":button, :submit, :reset, :checkbox, :radio, a, :data(button)").filter(":ui-button").button("refresh").end().not(":ui-button").button().end().map(function(){return e(this).button("widget")[0]}).removeClass("ui-corner-all ui-corner-left ui-corner-right").filter(":visible").filter(":first").addClass("ui-corner-left").end().filter(":last").addClass("ui-corner-right").end().end().end()},destroy:function(){this.element.removeClass("ui-buttonset");this.buttons.map(function(){return e(this).button("widget")[0]}).removeClass("ui-corner-left ui-corner-right").end().button("destroy");e.Widget.prototype.destroy.call(this)}})}(jQuery));(function(f,g){f.ui=f.ui||{};var d=/left|center|right/,e=/top|center|bottom/,a="center",b=f.fn.position,c=f.fn.offset;f.fn.position=function(i){if(!i||!i.of){return b.apply(this,arguments)}i=f.extend({},i);var m=f(i.of),l=m[0],o=(i.collision||"flip").split(" "),n=i.offset?i.offset.split(" "):[0,0],k,h,j;if(l.nodeType===9){k=m.width();h=m.height();j={top:0,left:0}}else{if(l.setTimeout){k=m.width();h=m.height();j={top:m.scrollTop(),left:m.scrollLeft()}}else{if(l.preventDefault){i.at="left top";k=h=0;j={top:i.of.pageY,left:i.of.pageX}}else{k=m.outerWidth();h=m.outerHeight();j=m.offset()}}}f.each(["my","at"],function(){var p=(i[this]||"").split(" ");if(p.length===1){p=d.test(p[0])?p.concat([a]):e.test(p[0])?[a].concat(p):[a,a]}p[0]=d.test(p[0])?p[0]:a;p[1]=e.test(p[1])?p[1]:a;i[this]=p});if(o.length===1){o[1]=o[0]}n[0]=parseInt(n[0],10)||0;if(n.length===1){n[1]=n[0]}n[1]=parseInt(n[1],10)||0;if(i.at[0]==="right"){j.left+=k}else{if(i.at[0]===a){j.left+=k/2}}if(i.at[1]==="bottom"){j.top+=h}else{if(i.at[1]===a){j.top+=h/2}}j.left+=n[0];j.top+=n[1];return this.each(function(){var s=f(this),u=s.outerWidth(),r=s.outerHeight(),t=parseInt(f.curCSS(this,"marginLeft",true))||0,q=parseInt(f.curCSS(this,"marginTop",true))||0,w=u+t+parseInt(f.curCSS(this,"marginRight",true))||0,x=r+q+parseInt(f.curCSS(this,"marginBottom",true))||0,v=f.extend({},j),p;if(i.my[0]==="right"){v.left-=u}else{if(i.my[0]===a){v.left-=u/2}}if(i.my[1]==="bottom"){v.top-=r}else{if(i.my[1]===a){v.top-=r/2}}v.left=parseInt(v.left);v.top=parseInt(v.top);p={left:v.left-t,top:v.top-q};f.each(["left","top"],function(z,y){if(f.ui.position[o[z]]){f.ui.position[o[z]][y](v,{targetWidth:k,targetHeight:h,elemWidth:u,elemHeight:r,collisionPosition:p,collisionWidth:w,collisionHeight:x,offset:n,my:i.my,at:i.at})}});if(f.fn.bgiframe){s.bgiframe()}s.offset(f.extend(v,{using:i.using}))})};f.ui.position={fit:{left:function(h,i){var k=f(window),j=i.collisionPosition.left+i.collisionWidth-k.width()-k.scrollLeft();h.left=j>0?h.left-j:Math.max(h.left-i.collisionPosition.left,h.left)},top:function(h,i){var k=f(window),j=i.collisionPosition.top+i.collisionHeight-k.height()-k.scrollTop();h.top=j>0?h.top-j:Math.max(h.top-i.collisionPosition.top,h.top)}},flip:{left:function(i,k){if(k.at[0]===a){return}var m=f(window),l=k.collisionPosition.left+k.collisionWidth-m.width()-m.scrollLeft(),h=k.my[0]==="left"?-k.elemWidth:k.my[0]==="right"?k.elemWidth:0,j=k.at[0]==="left"?k.targetWidth:-k.targetWidth,n=-2*k.offset[0];i.left+=k.collisionPosition.left<0?h+j+n:l>0?h+j+n:0},top:function(i,k){if(k.at[1]===a){return}var m=f(window),l=k.collisionPosition.top+k.collisionHeight-m.height()-m.scrollTop(),h=k.my[1]==="top"?-k.elemHeight:k.my[1]==="bottom"?k.elemHeight:0,j=k.at[1]==="top"?k.targetHeight:-k.targetHeight,n=-2*k.offset[1];i.top+=k.collisionPosition.top<0?h+j+n:l>0?h+j+n:0}}};if(!f.offset.setOffset){f.offset.setOffset=function(l,i){if(/static/.test(f.curCSS(l,"position"))){l.style.position="relative"}var k=f(l),n=k.offset(),h=parseInt(f.curCSS(l,"top",true),10)||0,m=parseInt(f.curCSS(l,"left",true),10)||0,j={top:(i.top-n.top)+h,left:(i.left-n.left)+m};if("using" in i){i.using.call(l,j)}else{k.css(j)}};f.fn.offset=function(h){var i=this[0];if(!i||!i.ownerDocument){return null}if(h){return this.each(function(){f.offset.setOffset(this,h)})}return c.call(this)}}}(jQuery));(function(d,e){var b="ui-dialog ui-widget ui-widget-content ui-corner-all ",a={buttons:true,height:true,maxHeight:true,maxWidth:true,minHeight:true,minWidth:true,width:true},c={maxHeight:true,maxWidth:true,minHeight:true,minWidth:true};d.widget("ui.dialog",{options:{autoOpen:true,buttons:{},closeOnEscape:true,closeText:"close",dialogClass:"",draggable:true,hide:null,height:"auto",maxHeight:false,maxWidth:false,minHeight:150,minWidth:150,modal:false,position:{my:"center",at:"center",of:window,collision:"fit",using:function(g){var f=d(this).css(g).offset().top;if(f<0){d(this).css("top",g.top-f)}}},resizable:true,show:null,stack:true,title:"",width:300,zIndex:1000},_create:function(){this.originalTitle=this.element.attr("title");if(typeof this.originalTitle!=="string"){this.originalTitle=""}this.options.title=this.options.title||this.originalTitle;var n=this,o=n.options,l=o.title||"&#160;",g=d.ui.dialog.getTitleId(n.element),m=(n.uiDialog=d("<div></div>")).appendTo(document.body).hide().addClass(b+o.dialogClass).css({zIndex:o.zIndex}).attr("tabIndex",-1).css("outline",0).keydown(function(p){if(o.closeOnEscape&&p.keyCode&&p.keyCode===d.ui.keyCode.ESCAPE){n.close(p);p.preventDefault()}}).attr({role:"dialog","aria-labelledby":g}).mousedown(function(p){n.moveToTop(false,p)}),i=n.element.show().removeAttr("title").addClass("ui-dialog-content ui-widget-content").appendTo(m),h=(n.uiDialogTitlebar=d("<div></div>")).addClass("ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix").prependTo(m),k=d('<a href="#"></a>').addClass("ui-dialog-titlebar-close ui-corner-all").attr("role","button").hover(function(){k.addClass("ui-state-hover")},function(){k.removeClass("ui-state-hover")}).focus(function(){k.addClass("ui-state-focus")}).blur(function(){k.removeClass("ui-state-focus")}).click(function(p){n.close(p);return false}).appendTo(h),j=(n.uiDialogTitlebarCloseText=d("<span></span>")).addClass("ui-icon ui-icon-closethick").text(o.closeText).appendTo(k),f=d("<span></span>").addClass("ui-dialog-title").attr("id",g).html(l).prependTo(h);if(d.isFunction(o.beforeclose)&&!d.isFunction(o.beforeClose)){o.beforeClose=o.beforeclose}h.find("*").add(h).disableSelection();if(o.draggable&&d.fn.draggable){n._makeDraggable()}if(o.resizable&&d.fn.resizable){n._makeResizable()}n._createButtons(o.buttons);n._isOpen=false;if(d.fn.bgiframe){m.bgiframe()}},_init:function(){if(this.options.autoOpen){this.open()}},destroy:function(){var f=this;if(f.overlay){f.overlay.destroy()}f.uiDialog.hide();f.element.unbind(".dialog").removeData("dialog").removeClass("ui-dialog-content ui-widget-content").hide().appendTo("body");f.uiDialog.remove();if(f.originalTitle){f.element.attr("title",f.originalTitle)}return f},widget:function(){return this.uiDialog},close:function(h){var f=this,g;if(false===f._trigger("beforeClose",h)){return}if(f.overlay){f.overlay.destroy()}f.uiDialog.unbind("keypress.ui-dialog");f._isOpen=false;if(f.options.hide){f.uiDialog.hide(f.options.hide,function(){f._trigger("close",h)})}else{f.uiDialog.hide();f._trigger("close",h)}d.ui.dialog.overlay.resize();if(f.options.modal){g=0;d(".ui-dialog").each(function(){if(this!==f.uiDialog[0]){g=Math.max(g,d(this).css("z-index"))}});d.ui.dialog.maxZ=g}return f},isOpen:function(){return this._isOpen},moveToTop:function(j,i){var f=this,h=f.options,g;if((h.modal&&!j)||(!h.stack&&!h.modal)){return f._trigger("focus",i)}if(h.zIndex>d.ui.dialog.maxZ){d.ui.dialog.maxZ=h.zIndex}if(f.overlay){d.ui.dialog.maxZ+=1;f.overlay.$el.css("z-index",d.ui.dialog.overlay.maxZ=d.ui.dialog.maxZ)}g={scrollTop:f.element.attr("scrollTop"),scrollLeft:f.element.attr("scrollLeft")};d.ui.dialog.maxZ+=1;f.uiDialog.css("z-index",d.ui.dialog.maxZ);f.element.attr(g);f._trigger("focus",i);return f},open:function(){if(this._isOpen){return}var g=this,h=g.options,f=g.uiDialog;g.overlay=h.modal?new d.ui.dialog.overlay(g):null;g._size();g._position(h.position);f.show(h.show);g.moveToTop(true);if(h.modal){f.bind("keypress.ui-dialog",function(k){if(k.keyCode!==d.ui.keyCode.TAB){return}var j=d(":tabbable",this),l=j.filter(":first"),i=j.filter(":last");if(k.target===i[0]&&!k.shiftKey){l.focus(1);return false}else{if(k.target===l[0]&&k.shiftKey){i.focus(1);return false}}})}d(g.element.find(":tabbable").get().concat(f.find(".ui-dialog-buttonpane :tabbable").get().concat(f.get()))).eq(0).focus();g._isOpen=true;g._trigger("open");return g},_createButtons:function(i){var h=this,f=false,g=d("<div></div>").addClass("ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"),j=d("<div></div>").addClass("ui-dialog-buttonset").appendTo(g);h.uiDialog.find(".ui-dialog-buttonpane").remove();if(typeof i==="object"&&i!==null){d.each(i,function(){return !(f=true)})}if(f){d.each(i,function(k,m){m=d.isFunction(m)?{click:m,text:k}:m;var l=d('<button type="button"></button>').attr(m,true).unbind("click").click(function(){m.click.apply(h.element[0],arguments)}).appendTo(j);if(d.fn.button){l.button()}});g.appendTo(h.uiDialog)}},_makeDraggable:function(){var f=this,i=f.options,j=d(document),h;function g(k){return{position:k.position,offset:k.offset}}f.uiDialog.draggable({cancel:".ui-dialog-content, .ui-dialog-titlebar-close",handle:".ui-dialog-titlebar",containment:"document",start:function(k,l){h=i.height==="auto"?"auto":d(this).height();d(this).height(d(this).height()).addClass("ui-dialog-dragging");f._trigger("dragStart",k,g(l))},drag:function(k,l){f._trigger("drag",k,g(l))},stop:function(k,l){i.position=[l.position.left-j.scrollLeft(),l.position.top-j.scrollTop()];d(this).removeClass("ui-dialog-dragging").height(h);f._trigger("dragStop",k,g(l));d.ui.dialog.overlay.resize()}})},_makeResizable:function(k){k=(k===e?this.options.resizable:k);var g=this,j=g.options,f=g.uiDialog.css("position"),i=(typeof k==="string"?k:"n,e,s,w,se,sw,ne,nw");function h(l){return{originalPosition:l.originalPosition,originalSize:l.originalSize,position:l.position,size:l.size}}g.uiDialog.resizable({cancel:".ui-dialog-content",containment:"document",alsoResize:g.element,maxWidth:j.maxWidth,maxHeight:j.maxHeight,minWidth:j.minWidth,minHeight:g._minHeight(),handles:i,start:function(l,m){d(this).addClass("ui-dialog-resizing");g._trigger("resizeStart",l,h(m))},resize:function(l,m){g._trigger("resize",l,h(m))},stop:function(l,m){d(this).removeClass("ui-dialog-resizing");j.height=d(this).height();j.width=d(this).width();g._trigger("resizeStop",l,h(m));d.ui.dialog.overlay.resize()}}).css("position",f).find(".ui-resizable-se").addClass("ui-icon ui-icon-grip-diagonal-se")},_minHeight:function(){var f=this.options;if(f.height==="auto"){return f.minHeight}else{return Math.min(f.minHeight,f.height)}},_position:function(g){var h=[],i=[0,0],f;if(g){if(typeof g==="string"||(typeof g==="object"&&"0" in g)){h=g.split?g.split(" "):[g[0],g[1]];if(h.length===1){h[1]=h[0]}d.each(["left","top"],function(k,j){if(+h[k]===h[k]){i[k]=h[k];h[k]=j}});g={my:h.join(" "),at:h.join(" "),offset:i.join(" ")}}g=d.extend({},d.ui.dialog.prototype.options.position,g)}else{g=d.ui.dialog.prototype.options.position}f=this.uiDialog.is(":visible");if(!f){this.uiDialog.show()}this.uiDialog.css({top:0,left:0}).position(g);if(!f){this.uiDialog.hide()}},_setOptions:function(i){var g=this,f={},h=false;d.each(i,function(j,k){g._setOption(j,k);if(j in a){h=true}if(j in c){f[j]=k}});if(h){this._size()}if(this.uiDialog.is(":data(resizable)")){this.uiDialog.resizable("option",f)}},_setOption:function(i,j){var g=this,f=g.uiDialog;switch(i){case"beforeclose":i="beforeClose";break;case"buttons":g._createButtons(j);break;case"closeText":g.uiDialogTitlebarCloseText.text(""+j);break;case"dialogClass":f.removeClass(g.options.dialogClass).addClass(b+j);break;case"disabled":if(j){f.addClass("ui-dialog-disabled")}else{f.removeClass("ui-dialog-disabled")}break;case"draggable":var h=f.is(":data(draggable)");if(h&&!j){f.draggable("destroy")}if(!h&&j){g._makeDraggable()}break;case"position":g._position(j);break;case"resizable":var k=f.is(":data(resizable)");if(k&&!j){f.resizable("destroy")}if(k&&typeof j==="string"){f.resizable("option","handles",j)}if(!k&&j!==false){g._makeResizable(j)}break;case"title":d(".ui-dialog-title",g.uiDialogTitlebar).html(""+(j||"&#160;"));break}d.Widget.prototype._setOption.apply(g,arguments)},_size:function(){var i=this.options,f,h;this.element.show().css({width:"auto",minHeight:0,height:0});if(i.minWidth>i.width){i.width=i.minWidth}f=this.uiDialog.css({height:"auto",width:i.width}).height();h=Math.max(0,i.minHeight-f);if(i.height==="auto"){if(d.support.minHeight){this.element.css({minHeight:h,height:"auto"})}else{this.uiDialog.show();var g=this.element.css("height","auto").height();this.uiDialog.hide();this.element.height(Math.max(g,h))}}else{this.element.height(Math.max(i.height-f,0))}if(this.uiDialog.is(":data(resizable)")){this.uiDialog.resizable("option","minHeight",this._minHeight())}}});d.extend(d.ui.dialog,{version:"1.8.6",uuid:0,maxZ:0,getTitleId:function(f){var g=f.attr("id");if(!g){this.uuid+=1;g=this.uuid}return"ui-dialog-title-"+g},overlay:function(f){this.$el=d.ui.dialog.overlay.create(f)}});d.extend(d.ui.dialog.overlay,{instances:[],oldInstances:[],maxZ:0,events:d.map("focus,mousedown,mouseup,keydown,keypress,click".split(","),function(f){return f+".dialog-overlay"}).join(" "),create:function(g){if(this.instances.length===0){setTimeout(function(){if(d.ui.dialog.overlay.instances.length){d(document).bind(d.ui.dialog.overlay.events,function(h){if(d(h.target).zIndex()<d.ui.dialog.overlay.maxZ){return false}})}},1);d(document).bind("keydown.dialog-overlay",function(h){if(g.options.closeOnEscape&&h.keyCode&&h.keyCode===d.ui.keyCode.ESCAPE){g.close(h);h.preventDefault()}});d(window).bind("resize.dialog-overlay",d.ui.dialog.overlay.resize)}var f=(this.oldInstances.pop()||d("<div></div>").addClass("ui-widget-overlay")).appendTo(document.body).css({width:this.width(),height:this.height()});if(d.fn.bgiframe){f.bgiframe()}this.instances.push(f);return f},destroy:function(f){this.oldInstances.push(this.instances.splice(d.inArray(f,this.instances),1)[0]);if(this.instances.length===0){d([document,window]).unbind(".dialog-overlay")}f.remove();var g=0;d.each(this.instances,function(){g=Math.max(g,this.css("z-index"))});this.maxZ=g},height:function(){var g,f;if(d.browser.msie&&d.browser.version<7){g=Math.max(document.documentElement.scrollHeight,document.body.scrollHeight);f=Math.max(document.documentElement.offsetHeight,document.body.offsetHeight);if(g<f){return d(window).height()+"px"}else{return g+"px"}}else{return d(document).height()+"px"}},width:function(){var f,g;if(d.browser.msie&&d.browser.version<7){f=Math.max(document.documentElement.scrollWidth,document.body.scrollWidth);g=Math.max(document.documentElement.offsetWidth,document.body.offsetWidth);if(f<g){return d(window).width()+"px"}else{return f+"px"}}else{return d(document).width()+"px"}},resize:function(){var f=d([]);d.each(d.ui.dialog.overlay.instances,function(){f=f.add(this)});f.css({width:0,height:0}).css({width:d.ui.dialog.overlay.width(),height:d.ui.dialog.overlay.height()})}});d.extend(d.ui.dialog.overlay.prototype,{destroy:function(){d.ui.dialog.overlay.destroy(this.$el)}})}(jQuery));
+</script>
+<script src="js/jquery-ui-1.10.0.custom.js"></script>
+<script src="jquery.aj.filterable.js"></script>
+<script>
 
-      var FTJ = {
-        activeSlide:$.cookie("activeSlide"),
-        init:function() {
+			var FTJ = {
+				activeSlide:$.cookie("activeSlide"),
+				init:function() {
 
 //            !this.activeSlide && this.intro();
-
-(function($) {
-	// The jQuery.aj namespace will automatically be created if it doesn't exist
-	$.widget("aj.filterable", {
-		options: {
-			delay: 250,
-			"className": ""
-		},
-		_create: function() {
-			// The _create method is called the first time the plugin is invoked on an element
-			// This is where most of your setup will happen
-			// Two things are already available:
-			// this.element -- a jQuery object of the element the widget was invoked on.
-			// this.options --  the merged options hash
-			this.filterElems = this.element.children().addClass("ui-widget-content " + this.options.className).bind("mouseenter.filterable mouseleave.filterable", $.proxy(this, "_hover"));
-
-			this.filterInput = $("<input>", {
-				type: "text"
-			}).insertBefore(this.element).bind("keyup.filterable", $.proxy(this, "filter")).wrap("<div class='ui-widget-header " + this.options.className + "'>");
-			this.timeout = false;
-
-			this._trigger("ready");
-
-		},
-		filter: function(e) {
-			// Keep various pieces of logic in separate methods
-			this.timeout && clearTimeout(this.timeout);
-			this.timeout = setTimeout($.proxy(function() {
-				var re = new RegExp(this.filterInput.val(), "ig"),
-				visible = this.filterElems.filter(function() {
-					var $t = $(this),
-					matches = re.test($t.text()),
-					method = (matches ? "remove": "add") + "Class";
-					$t[method]("ui-helper-hidden");
-					return matches;
-				});
-				this._trigger("filtered", e, {
-					visible: visible
-				});
-
-			},
-			this), this.options.delay);
-
-		},
-		_hover: function(e) {
-			$(e.target)[(e.type == "mouseenter" ? "add": "remove") + "Class"]("ui-state-active");
-			this._trigger("hover", e, {
-				hovered: $(e.target)
-			});
-
-		},
-		_setOption: function(key, value) {
-			var oldValue = this.options[key];
-			// Check for a particular option being set
-			if (key == "className") {
-				// Gather all the elements we applied the className to
-				this.filterInput.parent().add(this.filterElems)
-				// Wwitch the new className in for the old
-				.toggleClass(this.options.className + " " + value);
-			}
-			// Call the base _setOption method
-			$.Widget.prototype._setOption.apply(this, arguments);
-
-			// The widget factory doesn't fire an callback for options changes by default
-			// In order to allow the user to respond, fire our own callback
-			this._trigger("setOption", {
-				type: "setOption"
-			},
-			{
-				option: key,
-				original: oldValue,
-				current: value
-			});
-
-		},
-		destroy: function() {
-			// Use the destroy method to reverse everything your plugin has applied
-			this.filterInput.parent().remove();
-			this.filterElems.removeClass("ui-widget-content ui-helper-hidden ui-state-active " + this.options.className).unbind(".filterable");
-			this._trigger("destroy",{type:"destroy"},{options:this.options});
-			// After you do that, you still need to invoke the "base" destroy method
-			// Does nice things like unbind all namespaced events
-			$.Widget.prototype.destroy.call(this);
-		}
-	});
-})(jQuery);
 $(function() {
 	var total = $("#total"),
 	cheeses = $("#cheeses"),
 	register = $("#register"),
 	price = $("<span>"),
-	activation = $("#activation").button({icons:{primary:"ui-icon-search"}}).toggle(function() {
-		cheeses.filterable({
-			className: "cheese",
-			create: function() {
-				register.addClass("ui-widget-header cheese").show();
-			},
-			filtered: function(e, ui) {
-				var t = 0;
-				ui.visible.each(function() {
-					t = t + $(this).data("price");
-				});
-				total.text(t.toFixed(2));
-			},
-			setOption: function(e, ui) {
-				if (ui.option == "className") {
-					register.toggleClass([ui.original, ui.current].join(" "));
-				}
-			},
-			hover: function(e, ui) {
-				if (e.originalEvent.type == "mouseenter") {
-					price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
-				} else {
-					price.detach();
-				}
+	activation = $("#activation")
+		.button({icons:{primary:"ui-icon-search"}})
+		.click(function() {
+			if ( cheeses.data("aj-filterable") ) {
+				cheeses.filterable("destroy");
+				return;
 			}
-		}).bind("filterabledestroy", function(e,ui) {
-			register.removeClass("ui-widget-header "+ui.options.className).hide();
-		}).filterable("filter");
-		setTimeout(function() {
-			cheeses.filterable("option", "className", "cheesePlease");
-		},3000);
-	},
-	function() {
-		cheeses.filterable("destroy");
-	});
+			cheeses.filterable({
+				className: "cheese",
+				create: function() {
+					register.addClass("ui-widget-header cheese").show();
+				},
+				filtered: function(e, ui) {
+					var t = 0;
+					ui.visible.each(function() {
+						t = t + parseFloat($(this).data("price"));
+					});
+					total.text(t.toFixed(2));
+				},
+				setOption: function(e, ui) {
+					if (ui.option == "className") {
+						register.toggleClass([ui.original, ui.current].join(" "));
+					}
+				},
+				hover: function(e, ui) {
+					if (e.originalEvent.type == "mouseenter") {
+						price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
+					} else {
+						price.detach();
+					}
+				}
+			}).bind("filterabledestroy", function(e,ui) {
+				register.removeClass("ui-widget-header "+ui.options.className).hide();
+			}).filterable("filter");
+			setTimeout(function() {
+				cheeses.filterable("option", "className", "cheesePlease");
+			},3000);
+		});
 });
 
-        },
-        intro:function() {
-                var welcome = $("#welcome")
-                .dialog({
-                  title:"First Time?",
-                  modal:true,
-                  width:"67%",
-                  buttons:{
-                    "Cool, Let's Get Started!":function() {
-                      $.cookie("activeSlide",1);
-                      welcome.dialog("close");
-                    }
-                  }
-                });
-        }
-      };
+				},
+				intro:function() {
+								var welcome = $("#welcome")
+								.dialog({
+									title:"First Time?",
+									modal:true,
+									width:"67%",
+									buttons:{
+										"Cool, Let's Get Started!":function() {
+											$.cookie("activeSlide",1);
+											welcome.dialog("close");
+										}
+									}
+								});
+				}
+			};
 
-      $(document).ready(function() {
-          FTJ.init();
-      });
+			$(document).ready(function() {
+					FTJ.init();
+			});
 
 </script>
 <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-19721657-1']);
-  _gaq.push(['_trackPageview']);
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-19721657-1']);
+	_gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
 
 </script>
 
-  </body>
+	</body>
 </html>
