@@ -511,33 +511,34 @@ _destroy: function() {
 			<p>A good widget provides a solid base with callbacks for customisation.</p>
 		<pre class="brush: js; toolbar: false;">
 var total = $("#total"), cheeses = $("#cheeses"), register = $("#register"), price = $("&lt;span&gt;"),
-	activation = $("#activation").button({icons:{primary:"ui-icon-search"}}).toggle(function() {
-		cheeses.filterable({
-			className: "cheese",
-			create: function() { register.addClass("ui-widget-header cheese").show(); },
-			filtered: function(e, ui) {
-				var t = 0;
-				ui.visible.each(function() { t = t + $(this).data("price"); });
-				total.text(t.toFixed(2));
-			},
-			setOption: function(e, ui) {
-				ui.option == "className" &amp;&amp; register.toggleClass([ui.original, ui.current].join(" "));
-			},
-			hover: function(e, ui) {
-				if (e.originalEvent.type == "mouseenter") {
-					price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
-				} else {
-					price.detach();
-				}
+	activation = $("#activation").button({icons:{primary:"ui-icon-search"}});
+activation.click(function() {
+	if (cheeses.is(":aj-filterable")) {
+		return cheeses.filterable("destroy");
+	}
+	cheeses.filterable({
+		className: "cheese",
+		create: function() { register.addClass("ui-widget-header cheese").show(); },
+		filtered: function(e, ui) {
+			var t = 0;
+			ui.visible.each(function() { t = t + $(this).data("price"); });
+			total.text(t.toFixed(2));
+		},
+		setOption: function(e, ui) {
+			ui.option == "className" &amp;&amp; register.toggleClass([ui.original, ui.current].join(" "));
+		},
+		hover: function(e, ui) {
+			if (e.originalEvent.type == "mouseenter") {
+				price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
+			} else {
+				price.detach();
 			}
-		}).bind("filterabledestroy", function(e,ui) {
-			register.removeClass("ui-widget-header "+ui.options.className).hide();
-		}).filterable("filter");
-		setTimeout(function() { cheeses.filterable("option", "className", "cheesePlease"); },3000);
-	},
-	function() {
-		cheeses.filterable("destroy");
-	});
+		}
+	}).on("filterabledestroy", function(e,ui) {
+		register.removeClass("ui-widget-header "+ui.options.className).hide();
+	}).filterable("filter");
+	setTimeout(function() { cheeses.filterable("option", "className", "cheesePlease"); },3000);
+});
 </pre>
 					</section>
 				</div>
@@ -1087,48 +1088,36 @@ css:"keyword"}];this.forHtmlScript(m.scriptScriptTags)}typeof require!="undefine
 
 //            !this.activeSlide && this.intro();
 $(function() {
-	var total = $("#total"),
-	cheeses = $("#cheeses"),
-	register = $("#register"),
-	price = $("<span>"),
-	activation = $("#activation")
-		.button({icons:{primary:"ui-icon-search"}})
-		.click(function() {
-			if ( cheeses.data("aj-filterable") ) {
-				cheeses.filterable("destroy");
-				return;
+var total = $("#total"), cheeses = $("#cheeses"), register = $("#register"), price = $("<span>"),
+	activation = $("#activation").button({icons:{primary:"ui-icon-search"}});
+activation.click(function() {
+	if (cheeses.is(":aj-filterable")) {
+		return cheeses.filterable("destroy");
+	}
+	cheeses.filterable({
+		className: "cheese",
+		create: function() { register.addClass("ui-widget-header cheese").show(); },
+		filtered: function(e, ui) {
+			var t = 0;
+			ui.visible.each(function() { t = t + $(this).data("price"); });
+			total.text(t.toFixed(2));
+		},
+		setOption: function(e, ui) {
+			ui.option == "className" && register.toggleClass([ui.original, ui.current].join(" "));
+		},
+		hover: function(e, ui) {
+			if (e.originalEvent.type == "mouseenter") {
+				price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
+			} else {
+				price.detach();
 			}
-			cheeses.filterable({
-				className: "cheese",
-				create: function() {
-					register.addClass("ui-widget-header cheese").show();
-				},
-				filtered: function(e, ui) {
-					var t = 0;
-					ui.visible.each(function() {
-						t = t + parseFloat($(this).data("price"));
-					});
-					total.text(t.toFixed(2));
-				},
-				setOption: function(e, ui) {
-					if (ui.option == "className") {
-						register.toggleClass([ui.original, ui.current].join(" "));
-					}
-				},
-				hover: function(e, ui) {
-					if (e.originalEvent.type == "mouseenter") {
-						price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
-					} else {
-						price.detach();
-					}
-				}
-			}).bind("filterabledestroy", function(e,ui) {
-				register.removeClass("ui-widget-header "+ui.options.className).hide();
-			}).filterable("filter");
-			setTimeout(function() {
-				cheeses.filterable("option", "className", "cheesePlease");
-			},3000);
-		});
+		}
+	}).on("filterabledestroy", function(e,ui) {
+		register.removeClass("ui-widget-header "+ui.options.className).hide();
+	}).filterable("filter");
+	setTimeout(function() { cheeses.filterable("option", "className", "cheesePlease"); },3000);
+});
+
 });
 
 				},
