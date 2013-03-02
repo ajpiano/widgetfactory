@@ -513,7 +513,7 @@ _destroy: function() {
 var total = $("#total"), cheeses = $("#cheeses"), register = $("#register"), price = $("&lt;span&gt;"),
 	activation = $("#activation").button({icons:{primary:"ui-icon-search"}});
 activation.click(function() {
-	if (cheeses.is(":aj-filterable")) {
+	if ( cheeses.is(":aj-filterable") ) {
 		return cheeses.filterable("destroy");
 	}
 	cheeses.filterable({
@@ -521,14 +521,14 @@ activation.click(function() {
 		create: function() { register.addClass("ui-widget-header cheese").show(); },
 		filtered: function(e, ui) {
 			var t = 0;
-			ui.visible.each(function() { t = t + $(this).data("price"); });
-			total.text(t.toFixed(2));
+			ui.visible.each(function() { t = t + parseFloat( $(this).data("price") ); });
+			total.text( t.toFixed( 2 ) );
 		},
 		setOption: function(e, ui) {
-			ui.option == "className" &amp;&amp; register.toggleClass([ui.original, ui.current].join(" "));
+			ui.option === "className" &amp;&amp; register.toggleClass([ui.original, ui.current].join(" "));
 		},
 		hover: function(e, ui) {
-			if (e.originalEvent.type == "mouseenter") {
+			if (e.originalEvent.type === "mouseenter") {
 				price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
 			} else {
 				price.detach();
@@ -1100,7 +1100,8 @@ activation.click(function() {
 		create: function() { register.addClass("ui-widget-header cheese").show(); },
 		filtered: function(e, ui) {
 			var t = 0;
-			ui.visible.each(function() { t = t + $(this).data("price"); });
+			ui.visible.each(function() { t = t + parseFloat($(this).data("price")); });
+			console.log( t );
 			total.text(t.toFixed(2));
 		},
 		setOption: function(e, ui) {
